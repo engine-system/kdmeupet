@@ -1,0 +1,8 @@
+{
+    "name": "kdmeupet",
+    "app_id": "19f31018",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    }
+}
