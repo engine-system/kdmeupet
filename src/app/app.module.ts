@@ -10,12 +10,28 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { MensagensPage } from '../pages/mensagens/mensagens';
+import { ListaPerdidosPage } from '../pages/lista-perdidos/lista-perdidos';
+import { ListaEncontradosPage } from '../pages/lista-encontrados/lista-encontrados';
+import { LoginPage } from '../pages/login/login';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { ResumoPage } from '../pages/resumo/resumo';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
 
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
+    MensagensPage,
+    ListaPerdidosPage,
+    ListaEncontradosPage,
+    LoginPage,
+    PerfilPage,
+    ResumoPage,
+    CadastroPage,
+    CadastroPetPage,
     HomePage,
     TabsPage
   ],
@@ -28,6 +44,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
+    MensagensPage,
+    ListaPerdidosPage,
+    ListaEncontradosPage,
+    LoginPage,
+    PerfilPage,
+    ResumoPage,
+    CadastroPage,
+    CadastroPetPage,
     HomePage,
     TabsPage
   ],
