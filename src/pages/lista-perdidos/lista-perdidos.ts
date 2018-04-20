@@ -19,6 +19,20 @@ export class ListaPerdidosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.pets = new Array();
+   
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
     
     this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
     this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});

@@ -20,6 +20,11 @@ export class ListaEncontradosPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.pets = new Array();
+    this.pets2 = new Array();
+    
+    this.pets2.push({});
+    this.pets2.push({});
+    this.pets2.push({});
     
     this.pets.push({});
     this.pets.push({});
