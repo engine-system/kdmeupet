@@ -14,25 +14,34 @@
 
 
 <ion-content>
-    <ion-card *ngFor="let pet of pets">
-        <ion-grid>
-            <ion-row>
-                <ion-col col-12><img src="assets/imgs/border-collie.png" /></ion-col>
-                <ion-col col-12>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col col-12>
-                                nome: Nika
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col col-12>
-                                Raça: Border Collie
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-card>
+    <div class="wrapper">
+        <section *ngFor="let pet of pets">
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12><img src={{pet.foto}} /></ion-col>
+                        <ion-col col-12>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-12>
+                                        nome: {{pet.nome}}
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-12>
+                                        Raça: {{pet.raca}}
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-12>
+                                        Situacao: {{pet.situacao}}
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </section>
+    </div>
 </ion-content>

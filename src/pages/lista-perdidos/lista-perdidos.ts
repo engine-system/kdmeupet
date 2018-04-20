@@ -20,11 +20,13 @@ export class ListaPerdidosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.pets = new Array();
     
-    this.pets.push({'teste':'teste'});
-    this.pets.push({'opa':'teste'});
-    this.pets.push({'tesdsadate':'teste'});
-    this.pets.push({'teste':'teste'});
-    this.pets.push({'teste':'teste'});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+    
   }
 
   ionViewDidLoad() {
