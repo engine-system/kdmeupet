@@ -1,18 +1,49 @@
-<!--
-  Generated template for the LoginPage page.
+<ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%" class="back">
+        <ion-card>
+            <ion-card-header>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-12 style="text-align: center;">Seja Bem vindo!</ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-list style="margin-bottom: 30px;">
+                    <ion-item>
+                        <ion-label floating>
+                            <ion-icon name="person"></ion-icon> Nome</ion-label>
+                        <ion-input type="text" value=""></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>
+                            <ion-icon name="mail"></ion-icon> E-mail</ion-label>
+                        <ion-input type="text" [(ngModel)]="email"></ion-input>
+                    </ion-item>
+                </ion-list>
+                <div float-left><button class="customBtn" ion-button (click)="logar()">Entrar</button></div>
+                <div float-right><button class="customBtn" ion-button (click)="cadastrar()">Cadastrar</button></div>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
+                <!--</div>
+              
+              
+              <ion-grid>
+                  <ion-row class="social-row">ou</ion-row>
+                  <ion-row class="social-row">
+                      <ion-col col-2>
+                          <ion-item class="back-facebook">
 
-</ion-header>
+                          </ion-item>
+                      </ion-col>
+                      <ion-col col-2>
+                          <ion-item class="back-google">
 
-
-<ion-content padding>
-
-</ion-content>
+                          </ion-item>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>-->
+            </ion-card-content>
+        </ion-card>
+    </ion-row>
+</ion-grid>
