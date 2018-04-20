@@ -6,9 +6,15 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  
+  public cadastrados:number;
+  public perdidos:number;
+  public mensagens:number;
 
   constructor(public navCtrl: NavController) {
-
+    this.cadastrados = 50;
+    this.perdidos = 23;
+    this.mensagens = 56;
   }
 
 }
