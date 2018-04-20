@@ -7,32 +7,43 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>lista-encontrados</ion-title>
+        <ion-title>Pets Encontrados</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-    <ion-card *ngFor="let pet of pets">
+    <section *ngFor="let pet of pets">
         <ion-grid>
             <ion-row>
-                <ion-col col-12><img src="assets/imgs/border-collie.png" /></ion-col>
-                <ion-col col-12>
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col col-12>
-                                nome: Nika
-                            </ion-col>
-                        </ion-row>
-                        <ion-row>
-                            <ion-col col-12>
-                                Raça: Border Collie
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
+                <ion-col col-6>
+                    <ion-card>
+                        <img src="{{pet.foto}}" />
+                        <ion-card-content>
+                            <ion-card-title>
+                                Nome: {{pet.nome}}
+                            </ion-card-title>
+                            <p>
+                                Raça: {{pet.raca}} Situacao: {{pet.situacao}}
+                            </p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-card>
+                        <img src="{{pet.foto}}" />
+                        <ion-card-content>
+                            <ion-card-title>
+                                Nome: {{pet.nome}}
+                            </ion-card-title>
+                            <p>
+                                Raça: {{pet.raca}} Situacao: {{pet.situacao}}
+                            </p>
+                        </ion-card-content>
+                    </ion-card>
                 </ion-col>
             </ion-row>
         </ion-grid>
-    </ion-card>
+    </section>
 </ion-content>

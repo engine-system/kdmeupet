@@ -10,16 +10,53 @@
     </ion-navbar>
 
 </ion-header>
-
-
-<ion-content>
+<ion-content class="card-background-page">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <ion-card>
+                    <img src="assets/imgs/cadastrados.jpg" />
+                    <div class="card-title">{{cadastrados}}</div>
+                    <div class="card-subtitle">Pets Cadastrados</div>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card>
+                    <img src="assets/imgs/perdidos.jpg" />
+                    <div class="card-title">{{perdidos}}</div>
+                    <div class="card-subtitle">Pets Perdidos</div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <ion-card>
+                    <img src="assets/imgs/mensagens.jpg" />
+                    <div class="card-title">{{mensagens}}</div>
+                    <div class="card-subtitle">Mensagens Novas</div>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card>
+                    <img src="assets/imgs/meu-perfil.jpg" />
+                    <div class="card-title">Meu Perfil</div>
+                    <div class="card-subtitle">meu perfil</div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<!--
+    <ion-content>
     <ion-grid>
         <ion-row>
             <ion-col col-12>
                 <ion-card>
 
                     <ion-card-content>
-                        Pets cadastrados: {{cadastrados}}
+                        Pets cadastrados: 
                     </ion-card-content>
 
                 </ion-card>
@@ -55,3 +92,4 @@
         </ion-row>
     </ion-grid>
 </ion-content>
+-->
