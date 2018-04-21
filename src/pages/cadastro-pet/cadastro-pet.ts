@@ -14,8 +14,15 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
+  public fotoDoPet:any;
+  constructor(private camera: Camera,public navCtrl: NavController, public navParams: NavParams) {}
+  
 
-  constructor(private camera: Camera,public navCtrl: NavController, public navParams: NavParams) {
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CadastroPetPage');
+  }
+
+  public tirarFoto(){
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -25,16 +32,10 @@ export class CadastroPetPage {
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-      console.log(base64Image);
+      this.fotoDoPet = 'data:image/jpeg;base64,' + imageData;
      }, (err) => {
       // Handle error
      });
-  }
-  
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPetPage');
   }
 
 }
