@@ -19,6 +19,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { ResumoPage } from '../pages/resumo/resumo';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
+import { CadastroPerdidoPage } from '../pages/cadastro-perdido/cadastro-perdido';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
     PerfilPage,
     ResumoPage,
     CadastroPage,
+    CadastroPerdidoPage,
     CadastroPetPage,
     HomePage,
     TabsPage
@@ -52,6 +54,7 @@ import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
     PerfilPage,
     ResumoPage,
     CadastroPage,
+    CadastroPerdidoPage,
     CadastroPetPage,
     HomePage,
     TabsPage

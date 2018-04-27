@@ -14,6 +14,22 @@
     <ion-grid>
         <ion-row>
             <ion-col col-6>
+                <ion-card (click)="perdiMeuPet()">
+                    <img src="assets/imgs/cadastrados.jpg" />
+                    <div class="card-title">Perdi meu pet!</div>
+                </ion-card>
+            </ion-col>
+            <ion-col col-6>
+                <ion-card (click)="acheiUmPet()">
+                    <img src="assets/imgs/perdidos.jpg" />
+                    <div class="card-title">Achei um pet!</div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
                 <ion-card (click)="tirarFoto()">
                     <img src="assets/imgs/cadastrados.jpg" />
                     <div class="card-title">{{cadastrados}}</div>

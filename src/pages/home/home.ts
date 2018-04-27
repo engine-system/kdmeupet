@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CadastroPetPage } from '../cadastro-pet/cadastro-pet';
+import { CadastroPerdidoPage } from '../cadastro-perdido/cadastro-perdido';
 
 @Component({
   selector: 'page-home',
@@ -17,8 +18,11 @@ export class HomePage {
     this.perdidos = 23;
     this.mensagens = 56;
   }
-  public tirarFoto(){
+  public perdiMeuPet(){
     this.navCtrl.push(CadastroPetPage)
+  }
+  public acheiUmPet(){
+    this.navCtrl.push(CadastroPerdidoPage)
   }
 
 }

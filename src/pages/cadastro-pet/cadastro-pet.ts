@@ -14,28 +14,61 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
-  public fotoDoPet:any;
-  constructor(private camera: Camera,public navCtrl: NavController, public navParams: NavParams) {}
   
+  public cores;
+  public portes;
+  public idades;
+  public racas;
+
+  public fotoDoPet: any;
+  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams) {
+    this.cores = [
+      {
+        codigo: '01',
+        nome: 'Preto'
+      },
+      {
+        codigo: '02',
+        nome: 'Branco'
+      }
+    ];
+    this.portes = [
+      {
+        codigo:'01',
+        nome:'Pequeno'
+      },
+      {
+        codigo:'02',
+        nome:'Médio'
+      }
+    ];
+    this.idades = [
+      {
+        codigo:'01',
+        nome:'Filhote'
+      },
+      {
+        codigo:'02',
+        nome:'Adulto'
+      }
+    ];
+    this.racas = [
+      {
+        codigo:'01',
+        nome:'Vira-Lata'
+      },
+      {
+        codigo:'02',
+        nome:'Border Collie'
+      }
+    ]
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroPetPage');
   }
+  public enviarFoto() {
 
-  public tirarFoto(){
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    this.camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      this.fotoDoPet = 'data:image/jpeg;base64,' + imageData;
-     }, (err) => {
-      // Handle error
-     });
   }
-
 }
