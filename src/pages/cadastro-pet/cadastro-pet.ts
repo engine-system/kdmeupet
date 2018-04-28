@@ -16,9 +16,7 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
-  
-  
-  public fotoDoPet: any;
+  public fotoDoPet: any = "opa funciona sim!";
   constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams) {}
 
 
@@ -29,7 +27,11 @@ export class CadastroPetPage {
 
   }
   public proximo(){
-    this.navCtrl.push(CadastroPet_2Page);
+    
+    
+    this.navCtrl.push(CadastroPet_2Page,{
+      cadastro1:this.fotoDoPet
+    });
   }
   public cancelar(){
     this.navCtrl.push(TabsPage)

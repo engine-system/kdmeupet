@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the CadastroPet_5Page page.
@@ -28,5 +29,6 @@ export class CadastroPet_5Page {
   }
   public concluir() {
     console.log("concluir cadastro");
+    this.navCtrl.push(TabsPage);
   }
 }

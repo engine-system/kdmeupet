@@ -13,8 +13,25 @@ export class CadastroPet_2Page {
   public portes;
   public idades;
   public racas;
+  public especies;
+  public cadastro1:any;
+  public cadastro2:any;
+  public nome;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+    this.cadastro1 = navParams.get('cadastro1');
+    console.log(this.cadastro1)
+    this.especies = [
+      {
+        codigo:'01',
+        nome:'Cachorro'
+      },
+      {
+        codigo:'02',
+        nome:'Gato'
+      }
+    ]
     this.cores = [
       {
         codigo: '01',
@@ -62,7 +79,12 @@ export class CadastroPet_2Page {
   }
 
   public proximo(){
-    this.navCtrl.push(CadastroPet_3Page);
+    this.cadastro2 = this.nome;
+    this.navCtrl.push(CadastroPet_3Page,
+    {
+      cadastro1:this.cadastro1,
+      cadastro2:this.cadastro2
+    });
   }
 
   public anterior(){
