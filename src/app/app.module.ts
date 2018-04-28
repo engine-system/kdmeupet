@@ -20,6 +20,10 @@ import { ResumoPage } from '../pages/resumo/resumo';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
 import { CadastroPerdidoPage } from '../pages/cadastro-perdido/cadastro-perdido';
+import { CadastroPet_2Page } from '../pages/cadastro-pet-2/cadastro-pet-2';
+import { CadastroPet_3Page } from '../pages/cadastro-pet-3/cadastro-pet-3';
+import { CadastroPet_4Page } from '../pages/cadastro-pet-4/cadastro-pet-4';
+import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { CadastroPerdidoPage } from '../pages/cadastro-perdido/cadastro-perdido'
     CadastroPage,
     CadastroPerdidoPage,
     CadastroPetPage,
+    CadastroPet_2Page,
+    CadastroPet_3Page,
+    CadastroPet_4Page,
+    CadastroPet_5Page,
     HomePage,
     TabsPage
   ],
@@ -56,6 +64,10 @@ import { CadastroPerdidoPage } from '../pages/cadastro-perdido/cadastro-perdido'
     CadastroPage,
     CadastroPerdidoPage,
     CadastroPetPage,
+    CadastroPet_2Page,
+    CadastroPet_3Page,
+    CadastroPet_4Page,
+    CadastroPet_5Page,
     HomePage,
     TabsPage
   ],
