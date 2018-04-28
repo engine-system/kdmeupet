@@ -23,8 +23,20 @@ export class CadastroPetPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroPetPage');
   }
-  public enviarFoto() {
-
+  public getFoto(){
+    const options: CameraOptions = {
+      quality: 20,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      saveToPhotoAlbum:false
+    }
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.fotoDoPet = 'data:image/jpeg;base64,' + imageData;
+     }, (err) => {
+      // Handle error
+     });
   }
   public proximo(){
     
