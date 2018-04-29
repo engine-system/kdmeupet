@@ -2,8 +2,8 @@ page-home {
 
 ion-content{
     background-image:url("../assets/imgs/pattern-back.jpg") !important;
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card-background-page {
     ion-card {
@@ -39,7 +39,6 @@ ion-content{
         font-size: 1.3em;
         width: 100%;
         color: #fff;
-        margin-left: 10%;
     }
     .title-pet {
         position: absolute;
@@ -49,9 +48,10 @@ ion-content{
         color: #fff;
     }
     .subtitle-pet {
-        font-size: 1.0em;
+        font-size: 0.9em;
         position: absolute;
         top: 60%;
+        padding: 10px;
         width: 100%;
         color: #fff;
     }
