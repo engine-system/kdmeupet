@@ -2,13 +2,7 @@
 
     <ion-navbar>
         <ion-title>KD MEU PET</ion-title>
-        <!--
-        <ion-buttons end>
-            <button ion-button icon-only (click)="openModal()">
-              <ion-icon name="menu"></ion-icon>
-            </button>
-        </ion-buttons>
-        -->
+       
     </ion-navbar>
 
 </ion-header>
@@ -17,97 +11,35 @@
         <ion-row>
             <ion-col col-6>
                 <ion-card (click)="perdiMeuPet()">
-                    <img src="assets/imgs/cadastrados.jpg" />
-                    <div class="card-title">Perdi meu pet!</div>
+                    <img src="assets/imgs/perdi-meu-pet.jpg" />
+                    <div class="title-pet">Perdi meu pet!</div>
+                    
+                    <div class="subtitle-pet">Cadastre o pet que você perdeu,<br> com foto,<br> localização e mais</div>
                 </ion-card>
             </ion-col>
             <ion-col col-6>
                 <ion-card (click)="acheiUmPet()">
-                    <img src="assets/imgs/perdidos.jpg" />
-                    <div class="card-title">Achei um pet!</div>
+                    <img src="assets/imgs/achei-meu-pet.jpg" />
+                    <div class="title-pet">Achei um pet!</div>                    
+                    <div class="subtitle-pet">Cadastre o pet que você encontrou, com foto, localização e mais</div>
                 </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
     <ion-grid>
         <ion-row>
-            <ion-col col-6>
+            <ion-col col-12>
                 <ion-card (click)="tirarFoto()">
-                    <img src="assets/imgs/cadastrados.jpg" />
-                    <div class="card-title">{{cadastrados}}</div>
-                    <div class="card-subtitle">Pets Cadastrados</div>
+                    <img src="assets/imgs/dados-app2.jpg" />                    
+                    <div class="title-analise">Informações</div>
+                    <div class="dado1">{{cadastrados}} Pets Cadastrados</div>                                      
+                    <div class="dado2">{{perdidos}} Pets Perdidos</div> 
                 </ion-card>
-            </ion-col>
-            <ion-col col-6>
                 <ion-card>
-                    <img src="assets/imgs/perdidos.jpg" />
-                    <div class="card-title">{{perdidos}}</div>
-                    <div class="card-subtitle">Pets Perdidos</div>
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-    <ion-grid>
-        <ion-row>
-            <ion-col col-6>
-                <ion-card>
-                    <img src="assets/imgs/mensagens.jpg" />
-                    <div class="card-title">{{mensagens}}</div>
-                    <div class="card-subtitle">Mensagens Novas</div>
-                </ion-card>
-            </ion-col>
-            <ion-col col-6>
-                <ion-card>
-                    <img src="assets/imgs/meu-perfil.jpg" />
-                    <div class="card-title">Meu Perfil</div>
-                    <div class="card-subtitle">meu perfil</div>
+                    <img src="assets/imgs/meu-registro2.jpg" />
+                    <div class="title-registro">Meu Registro Pessoal</div>
                 </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>
-<!--
-    <ion-content>
-    <ion-grid>
-        <ion-row>
-            <ion-col col-12>
-                <ion-card>
-
-                    <ion-card-content>
-                        Pets cadastrados: 
-                    </ion-card-content>
-
-                </ion-card>
-            </ion-col>
-            <ion-col col-12>
-                <ion-card>
-
-                    <ion-card-content pa>
-                        Pets perdidos: {{perdidos}}
-                    </ion-card-content>
-
-                </ion-card>
-            </ion-col>
-
-            <ion-col col-12>
-                <ion-card>
-
-                    <ion-card-content>
-                        Mensagens novas: {{mensagens}}
-                    </ion-card-content>
-
-                </ion-card>
-            </ion-col>
-            <ion-col col-12>
-                <ion-card>
-
-                    <ion-card-content>
-                        Meu Perfil
-                    </ion-card-content>
-
-                </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-</ion-content>
--->
