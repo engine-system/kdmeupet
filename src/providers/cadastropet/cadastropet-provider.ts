@@ -18,6 +18,7 @@ export class CadastropetProvider {
   public porte: any;
   public idade: any;
   public descrição: any;
+  public raca:any;
   public ultimoLocalVisto: any;
 
   constructor(public http: HttpClient) { }
@@ -31,6 +32,7 @@ export class CadastropetProvider {
     this.porte = "";
     this.idade = "";
     this.descrição = "";
+    this.raca = "";
     this.ultimoLocalVisto = "";
   }
 

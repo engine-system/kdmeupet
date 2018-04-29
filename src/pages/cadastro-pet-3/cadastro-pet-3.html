@@ -14,7 +14,8 @@
 
 
 <ion-content padding>
-    <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
+    Raça: {{ cadastroProvider.raca.nome }}
+    <ion-searchbar [(ngModel)]="inputName" [showCancelButton]="shouldShowCancel" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
     </ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let raca of racas" (click)="clicou(raca)">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
+import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
 
 @IonicPage()
 @Component({
@@ -10,7 +11,8 @@ import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 })
 export class CadastroPet_3Page {
   racas: any[];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public inputName:string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cadastroProvider:CadastropetProvider) {
     this.initializeItems();
   }
 
@@ -36,8 +38,10 @@ export class CadastroPet_3Page {
       })
     }
   }
-  clicou(texto) {
-    console.log(texto);
+  clicou(raca) {
+    this.cadastroProvider.raca = raca;
+    this.inputName = raca.nome;
+    console.log(raca);
   }
   onCancel(ev: any) {
     console.log("cancelado");
