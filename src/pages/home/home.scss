@@ -1,22 +1,55 @@
 page-home {}
 
+ion-content{
+    background-color: #b0deea!important;
+}
 .card-background-page {
     ion-card {
         position: relative;
         text-align: center;
     }
-    .card-title {
+    .title-analise{
         position: absolute;
-        top: 36%;
+        top:15%;
+        font-size: 1.3em;
+        color: #fff;
+        margin-left: 29%;
+    }
+
+    .dado1 {
+        position: absolute;
+        top:40%;
         font-size: 1.1em;
+        color: #fff;
+        margin-left: 29%;
+    }
+    .dado2 {
+        position: absolute;
+        top:60%;
+        font-size: 1.1em;
+        color: #fff;        
+        margin-left: 29%;
+    }
+   
+    .title-registro {
+        position: absolute;
+        top: 40%;
+        font-size: 1.3em;
         width: 100%;
-        font-weight: bold;
+        color: #fff;
+        margin-left: 10%;
+    }
+    .title-pet {
+        position: absolute;
+        top: 50%;
+        font-size: 1.3em;
+        width: 100%;
         color: #fff;
     }
-    .card-subtitle {
+    .subtitle-pet {
         font-size: 1.0em;
         position: absolute;
-        top: 52%;
+        top: 60%;
         width: 100%;
         color: #fff;
     }
