@@ -1,7 +1,9 @@
-page-home {}
+page-home {
 
 ion-content{
-    background-color: #b0deea!important;
+    background-image:url("../assets/imgs/pattern-back.jpg") !important;
+    background-size: contain;
+    background-repeat: repeat;
 }
 .card-background-page {
     ion-card {
@@ -53,4 +55,5 @@ ion-content{
         width: 100%;
         color: #fff;
     }
+}
 }
