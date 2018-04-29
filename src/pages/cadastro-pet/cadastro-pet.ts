@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 import { TabsPage } from '../tabs/tabs';
+import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
 /**
  * Generated class for the CadastroPetPage page.
  *
@@ -16,8 +17,7 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
-  public fotoDoPet: any = "opa funciona sim!";
-  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams, public cadastro:CadastropetProvider) {}
 
 
   ionViewDidLoad() {
@@ -33,7 +33,7 @@ export class CadastroPetPage {
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
-      this.fotoDoPet = 'data:image/jpeg;base64,' + imageData;
+      this.cadastro.foto = 'data:image/jpeg;base64,' + imageData;
      }, (err) => {
       // Handle error
      });
@@ -41,9 +41,7 @@ export class CadastroPetPage {
   public proximo(){
     
     
-    this.navCtrl.push(CadastroPet_2Page,{
-      cadastro1:this.fotoDoPet
-    });
+    this.navCtrl.push(CadastroPet_2Page);
   }
   public cancelar(){
     this.navCtrl.push(TabsPage)

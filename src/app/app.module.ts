@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Camera } from '@ionic-native/camera';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -24,6 +25,7 @@ import { CadastroPet_2Page } from '../pages/cadastro-pet-2/cadastro-pet-2';
 import { CadastroPet_3Page } from '../pages/cadastro-pet-3/cadastro-pet-3';
 import { CadastroPet_4Page } from '../pages/cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
+import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provider';
 
 @NgModule({
   declarations: [
@@ -48,9 +50,11 @@ import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
+  
   entryComponents: [
     MyApp,
     AboutPage,
@@ -75,7 +79,9 @@ import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
     StatusBar,
     SplashScreen,
     Camera,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    HttpClientModule,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CadastropetProvider
   ]
 })
 export class AppModule {}
