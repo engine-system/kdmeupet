@@ -70,8 +70,6 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-$ionicons-font-path: "../assets/fonts";
-
 
 // Ionicons
 // --------------------------------------------------
@@ -79,7 +77,7 @@ $ionicons-font-path: "../assets/fonts";
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionicons";
-@import "icon";
+@import "iconmoon";
 
 // Fonts
 // --------------------------------------------------
