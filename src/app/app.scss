@@ -57,3 +57,29 @@
         }
     }
 }
+.tabbar {
+	a.tab-button[aria-selected=true]:nth-of-type(1) {
+		color: color($colors,light);
+		.tab-button-icon {
+			color: color($colors,light);
+		}
+	}
+	a.tab-button[aria-selected=true]:nth-of-type(2) {
+		color: color($colors,light);
+		.tab-button-icon {
+			color: color($colors,light);
+		}
+	}
+	a.tab-button[aria-selected=true]:nth-of-type(3) {
+		color: color($colors,light);
+		.tab-button-icon {
+			color: color($colors,light);
+		}
+    }
+    a.tab-button[aria-selected=true]:nth-of-type(4) {
+		color: color($colors,light);
+		.tab-button-icon {
+			color: color($colors,light);
+		}
+	}
+}
