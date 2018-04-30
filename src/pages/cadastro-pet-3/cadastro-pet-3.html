@@ -8,18 +8,20 @@
 
         <ion-navbar color='secondary'>
                 <ion-title>Perdi meu Pet!</ion-title>
-            </ion-navbar>
+        </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <div class="title-pet">        
     Raça: {{ cadastroProvider.raca.nome }}
+    </div>
     <ion-searchbar [(ngModel)]="inputName" [showCancelButton]="shouldShowCancel" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
     </ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let raca of racas" (click)="clicou(raca)">
-            {{ raca.nome }}
+           <div class="list-pet">{{ raca.nome }}</div> 
         </ion-item>
     </ion-list>
 </ion-content>
