@@ -4,6 +4,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 import { TabsPage } from '../tabs/tabs';
 import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 /**
  * Generated class for the CadastroPetPage page.
  *
@@ -17,8 +18,30 @@ import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-pro
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
-  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams, public cadastro:CadastropetProvider) {}
+  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams, public cadastro:CadastropetProvider,
+  private adMob:AdMobFree) {
+    this.showBannerAd();
+  }
 
+  async showBannerAd(){
+    const bannerConfig:AdMobFreeBannerConfig = {
+      
+      isTesting:true,
+      autoShow:true,
+
+    }
+    this.adMob.banner.config(bannerConfig);
+
+    try{
+
+      const result = this.adMob.banner.prepare();
+      console.log(result);
+
+    }catch(e){
+      console.log("opaaa")
+      console.log(e);
+    }
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroPetPage');
