@@ -87,4 +87,5 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Para localizar seu pet" />
     </plugin>
+    <plugin name="cordova-plugin-admob-free" spec="~0.16.0" />
 </widget>
