@@ -26,6 +26,8 @@ import { CadastroPet_3Page } from '../pages/cadastro-pet-3/cadastro-pet-3';
 import { CadastroPet_4Page } from '../pages/cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
 import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provider';
+import { AdMobFree } from '@ionic-native/admob-free';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,8 @@ import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provid
     SplashScreen,
     Camera,
     HttpClientModule,
+    AdMobFree,
+    SocialSharing,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CadastropetProvider
