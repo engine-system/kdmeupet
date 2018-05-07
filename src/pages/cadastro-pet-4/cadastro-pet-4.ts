@@ -34,7 +34,12 @@ export class CadastroPet_4Page {
     const map = new google.maps.Map(this.mapRef.nativeElement,
     options);
 
-    this.addMarker(location,map);
+    //this.addMarker(location,map);
+
+    console.log(map);
+    
+    
+    
   }
   addMarker(position,map){
     return new google.maps.Marker({

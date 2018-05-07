@@ -27,6 +27,7 @@ import { CadastroPet_4Page } from '../pages/cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
 import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provider';
 import { AdMobFree } from '@ionic-native/admob-free';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { AdMobFree } from '@ionic-native/admob-free';
     Camera,
     HttpClientModule,
     AdMobFree,
+    SocialSharing,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CadastropetProvider
