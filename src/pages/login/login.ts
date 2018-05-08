@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { CadastroPage } from '../cadastro/cadastro';
+import { ConfiguracoesProvider } from '../../providers/configuracoes/configuracoes';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,7 +18,9 @@ import { CadastroPage } from '../cadastro/cadastro';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private configuracoes:ConfiguracoesProvider) {
   }
 
   ionViewDidLoad() {

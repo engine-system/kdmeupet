@@ -28,6 +28,7 @@ import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
 import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provider';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     SocialSharing,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CadastropetProvider
+    CadastropetProvider,
+    ConfiguracoesProvider
   ]
 })
 export class AppModule {}
