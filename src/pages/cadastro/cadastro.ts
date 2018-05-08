@@ -22,4 +22,8 @@ export class CadastroPage {
     console.log('ionViewDidLoad CadastroPage');
   }
 
+  cadastrar(){
+    console.log("efetuar cadastro");
+  }
+
 }
