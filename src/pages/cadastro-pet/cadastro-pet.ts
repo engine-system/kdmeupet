@@ -17,12 +17,17 @@ import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-pro
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
-  constructor(private camera: Camera, public navCtrl: NavController, public navParams: NavParams, public cadastro:CadastropetProvider) {}
-
+  constructor(
+    private camera: Camera,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public cadastro:CadastropetProvider
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroPetPage');
   }
+
   public getFoto(){
     const options: CameraOptions = {
       quality: 20,
