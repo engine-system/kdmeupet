@@ -29,6 +29,7 @@ import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provid
 import { AdMobFree } from '@ionic-native/admob-free';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes';
+import { EditarPerfilPage } from '../pages/editar-perfil/editar-perfil';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes'
     CadastroPet_4Page,
     CadastroPet_5Page,
     HomePage,
-    TabsPage
+    TabsPage,
+    EditarPerfilPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes'
     CadastroPet_4Page,
     CadastroPet_5Page,
     HomePage,
-    TabsPage
+    TabsPage,
+    EditarPerfilPage
   ],
   providers: [
     StatusBar,

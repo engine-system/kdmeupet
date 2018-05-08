@@ -5,6 +5,8 @@ import { CadastroPerdidoPage } from '../cadastro-perdido/cadastro-perdido';
 import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { CadastroPage } from '../cadastro/cadastro';
+import { EditarPerfilPage } from '../editar-perfil/editar-perfil';
 
 @Component({
   selector: 'page-home',
@@ -28,6 +30,9 @@ export class HomePage {
     this.perdidos = 23;
     this.mensagens = 56;
     this.showBannerAd();
+  }
+  public meuPerfil(){
+    this.navCtrl.push(EditarPerfilPage);
   }
   public perdiMeuPet() {
     this.cadastroPetProvider.zerar();
