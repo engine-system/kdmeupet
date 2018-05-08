@@ -6,13 +6,45 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cadastro</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>cadastro</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card>
+        <ion-card-content text-center>
+            <ion-list no-lines>
+                <div class="title-pet">Seu cadastro</div>
 
+                <ion-item class="pet-margin">
+                    <ion-label color="primary" floating>Seu Nome Completo</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="primary" floating>E-mail</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="primary" floating>Login</ion-label>
+                    <ion-input></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="primary" floating>Senha</ion-label>
+                    <ion-input type="password"></ion-input>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button full (click)="cadastrar()">Cadastrar</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>
