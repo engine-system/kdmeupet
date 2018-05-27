@@ -6,14 +6,18 @@
 -->
 <ion-header>
 
-        <ion-navbar color='secondary'>
-                <ion-title>Perdi meu Pet!</ion-title>
-            </ion-navbar>
+    <ion-navbar color='secondary'>
+        <ion-title>Perdi meu Pet!</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-label fixed>Endereço</ion-label>
+        <ion-input type="text" disabled [(ngModel)]="endereco"></ion-input>
+    </ion-item>
     <div #map id="map"></div>
 </ion-content>
 

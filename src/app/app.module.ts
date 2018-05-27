@@ -30,6 +30,7 @@ import { AdMobFree } from '@ionic-native/admob-free';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes';
 import { EditarPerfilPage } from '../pages/editar-perfil/editar-perfil';
+import { UtilProvider } from '../providers/util/util';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { EditarPerfilPage } from '../pages/editar-perfil/editar-perfil';
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CadastropetProvider,
-    ConfiguracoesProvider
+    ConfiguracoesProvider,
+    UtilProvider
   ]
 })
 export class AppModule {}
