@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Pet } from '../../model/pet';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the ListaPerdidosPage page.
@@ -15,32 +20,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListaPerdidosPage {
 
-  public pets:any;
+  public pets;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.pets = new Array();
-   
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
+  constructor(public navCtrl: NavController,
+    public afDB:AngularFireDatabase,
+    public navParams: NavParams,
+    public cadastroProvider:CadastropetProvider) {
     
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie2.jpg",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    this.pets.push({foto:"assets/imgs/border-collie.png",nome:"Lula",situacao:"preso",raca:"Border Collie"});
-    
+    this.cadastroProvider.getAll().then(data=>{
+      this.pets = data;
+    })
+
   }
 
   ionViewDidLoad() {

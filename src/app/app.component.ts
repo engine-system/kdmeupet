@@ -9,6 +9,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { User } from '../providers/auth/user';
+import { ListaPerdidosPage } from '../pages/lista-perdidos/lista-perdidos';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
     const authObserver = afAuth.authState.subscribe(user => {
       if (user) {
         this.userProvider.logado = user.uid;
-        this.rootPage = TabsPage;
+        //this.rootPage = TabsPage;
+        this.rootPage = ListaPerdidosPage;
         authObserver.unsubscribe();
       } else {
         this.rootPage = LoginPage;

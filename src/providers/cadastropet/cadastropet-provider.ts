@@ -37,26 +37,37 @@ export class CadastropetProvider {
     this.ultimoLocalVisto = "";
   }
 
-  getAll() {
-    return this.db.list(this.PATH)
-      .snapshotChanges()
+  getAll(): Promise<any> {
+    let pro = new Promise((resolv, reject) => {
+      this.db.list(this.PATH).valueChanges().subscribe(data=>{
+        resolv(data);
+      },
+      err => {
+        console.log(err);
+        reject(err);
+      })
+    })
+    return pro;
+    
+    /*.snapshotChanges()
       .map(changes => {
         return changes.map(c => ({
           key: c.payload.key,
           data: c.payload.val()
         }))
-      })
+      })*/
   }
 
   get(key: string) {
     return this.db.object(this.PATH + key)
-      .snapshotChanges()
+    /*  
+    .snapshotChanges()
       .map(c => {
         return {
           key: c.key,
           data: c.payload.val()
         }
-      })
+      })*/
   }
 
   save(pet: any) {
