@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ConfiguracoesProvider } from '../configuracoes/configuracoes';
+import { Toast, ToastController } from 'ionic-angular';
 
 /*
   Generated class for the UtilProvider provider.
@@ -13,11 +14,14 @@ export class UtilProvider {
 
   constructor(
     public http: HttpClient,
-    public config: ConfiguracoesProvider
+    public config: ConfiguracoesProvider,
+    public toast:ToastController
   ) {
     console.log('Hello UtilProvider Provider');
   }
-
+  createMessage(msg:string){
+    this.toast.create({message:msg,duration:3000,position:'bottom'}).present();
+  }
   getEnderecoLatLong(lat, long) {
     let url = this.config.ENDERECO_MAPS + '?latlng=' + lat + ',' + long + '&key=' + this.config.APIMAPSKEY
     console.log(url);

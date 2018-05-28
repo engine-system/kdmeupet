@@ -44,11 +44,10 @@ export class CadastroPetPage {
      });
   }
   public proximo(){
-    
-    
     this.navCtrl.push(CadastroPet_2Page);
   }
   public cancelar(){
+    this.cadastro.zerar();
     this.navCtrl.push(TabsPage)
   }
 }

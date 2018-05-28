@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { TabsPage } from '../tabs/tabs';
+import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
+import { UtilProvider } from '../../providers/util/util';
 
 /**
  * Generated class for the CadastroPet_5Page page.
@@ -17,10 +19,15 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class CadastroPet_5Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public cadastro: CadastropetProvider,
+    public util: UtilProvider) {
   }
 
   ionViewDidLoad() {
+    console.log(this.cadastro);
     console.log('ionViewDidLoad CadastroPet_5Page');
   }
 
@@ -28,7 +35,15 @@ export class CadastroPet_5Page {
     this.navCtrl.push(CadastroPet_4Page);
   }
   public concluir() {
-    console.log("concluir cadastro");
-    this.navCtrl.push(TabsPage);
+    this.cadastro.save(this.cadastro)
+      .then(() => {
+        this.util.createMessage('criado com sucesso');
+        this.navCtrl.push(TabsPage);
+      })
+      .catch((e) => {
+        console.log(e);
+        this.util.createMessage('Ocorreu um erro');
+      });
+
   }
 }

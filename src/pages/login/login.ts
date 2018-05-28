@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { CadastroPage } from '../cadastro/cadastro';
 import { ConfiguracoesProvider } from '../../providers/configuracoes/configuracoes';
+import { AuthService } from '../../providers/auth/auth-service';
+import { NgForm } from '@angular/forms';
+import { User } from '../../providers/auth/user';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,17 +21,28 @@ import { ConfiguracoesProvider } from '../../providers/configuracoes/configuraco
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  usuario:User = new User();
+  @ViewChild('form') form :NgForm;
+  
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private configuracoes:ConfiguracoesProvider) {
+    private configuracoes:ConfiguracoesProvider,
+  private authService:AuthService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
   public logar(){
-    this.navCtrl.push(TabsPage)
+    if(this.form.form.valid){
+      this.authService.logar(this.usuario)
+      .then(()=>{
+        this.navCtrl.setRoot(TabsPage);
+      })
+      .catch((error:any)=>{
+
+      })
+    }
   }
   public cadastrar(){
     this.navCtrl.push(CadastroPage)

@@ -9,7 +9,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { AngularFireModule, FirebaseNameOrConfigToken } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MensagensPage } from '../pages/mensagens/mensagens';
@@ -31,7 +33,19 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes';
 import { EditarPerfilPage } from '../pages/editar-perfil/editar-perfil';
 import { UtilProvider } from '../providers/util/util';
-
+import { AuthService } from '../providers/auth/auth-service';
+import { CabecalhoPage } from '../pages/cabecalho/cabecalho';
+import { PopoverPage } from '../pages/popover/popover';
+import { User } from '../providers/auth/user';
+/*PRODUÇÃO */
+const firebaseConfig={
+  apiKey: "AIzaSyBtRvYg194vF2tbLPS0xnncPisCJlQUFDo",
+  authDomain: "kdmeupet-1525023112929.firebaseapp.com",
+  databaseURL: "https://kdmeupet-1525023112929.firebaseio.com",
+  projectId: "kdmeupet-1525023112929",
+  storageBucket: "kdmeupet-1525023112929.appspot.com",
+  messagingSenderId: "242891791875"
+}
 @NgModule({
   declarations: [
     MyApp,
@@ -50,17 +64,22 @@ import { UtilProvider } from '../providers/util/util';
     CadastroPet_3Page,
     CadastroPet_4Page,
     CadastroPet_5Page,
+    CabecalhoPage,
     HomePage,
     TabsPage,
+    PopoverPage,
     EditarPerfilPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
-  
+
   entryComponents: [
     MyApp,
     AboutPage,
@@ -78,8 +97,10 @@ import { UtilProvider } from '../providers/util/util';
     CadastroPet_3Page,
     CadastroPet_4Page,
     CadastroPet_5Page,
+    CabecalhoPage,
     HomePage,
     TabsPage,
+    PopoverPage,
     EditarPerfilPage
   ],
   providers: [
@@ -90,10 +111,14 @@ import { UtilProvider } from '../providers/util/util';
     AdMobFree,
     SocialSharing,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     CadastropetProvider,
     ConfiguracoesProvider,
-    UtilProvider
+    UtilProvider,
+    User,
+    AuthService
   ]
 })
 export class AppModule {}
+
+

@@ -1,16 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { User } from '../auth/user';
 
-/*
-  Generated class for the CadastropetProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class CadastropetProvider {
 
-  public nome: string = "";
+  public nome: any;
+  public genero: any;
   public foto: any;
   public especie: any;
   public cor1: any;
@@ -18,10 +15,14 @@ export class CadastropetProvider {
   public porte: any;
   public idade: any;
   public descrição: any;
-  public raca:any;
+  public raca: any;
   public ultimoLocalVisto: any;
+  private PATH = 'perdidos/';
 
-  constructor(public http: HttpClient) { }
+  constructor(
+    private db: AngularFireDatabase,
+    public http: HttpClient,
+  public userProvider:User) { }
 
   zerar() {
     this.nome = "";
@@ -34,6 +35,73 @@ export class CadastropetProvider {
     this.descrição = "";
     this.raca = "";
     this.ultimoLocalVisto = "";
+  }
+
+  getAll() {
+    return this.db.list(this.PATH)
+      .snapshotChanges()
+      .map(changes => {
+        return changes.map(c => ({
+          key: c.payload.key,
+          data: c.payload.val()
+        }))
+      })
+  }
+
+  get(key: string) {
+    return this.db.object(this.PATH + key)
+      .snapshotChanges()
+      .map(c => {
+        return {
+          key: c.key,
+          data: c.payload.val()
+        }
+      })
+  }
+
+  save(pet: any) {
+
+    return new Promise((resolve, reject) => {
+      if (pet.key) {
+        this.db.list(this.PATH)
+          .update(pet.key, {
+            responsavelCadastro:this.userProvider.logado,
+            nome: pet.nome,
+            genero: pet.genero,
+            foto: pet.foto,
+            especie: pet.especie,
+            cor1: pet.cor1,
+            cor2: pet.cor2,
+            porte: pet.porte,
+            idade: pet.idade,
+            raca: pet.raca,
+            ultimoLocalVisto: pet.ultimoLocalVisto
+          })
+          .then(() => resolve())
+          .catch((e) => reject(e));
+      } else {
+        this.db.list(this.PATH)
+          .push({
+            responsavelCadastro:this.userProvider.logado,
+            nome: pet.nome,
+            genero: pet.genero,
+            foto: pet.foto,
+            especie: pet.especie,
+            cor1: pet.cor1,
+            cor2: pet.cor2,
+            porte: pet.porte,
+            idade: pet.idade,
+            raca: pet.raca,
+            ultimoLocalVisto: pet.ultimoLocalVisto
+          })
+          .then(() => resolve());
+      }
+    })
+
+  }
+
+  remove(key: string) {
+    this.db.list(this.PATH).remove(key);
   }
 
 }

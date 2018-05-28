@@ -18,23 +18,28 @@
         <ion-card-content text-center>
             <ion-list no-lines>
                 <div class="title-pet">Seu cadastro</div>
-
-                <ion-item class="pet-margin">
-                    <ion-label color="primary" floating>Seu Nome Completo</ion-label>
-                    <ion-input></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label color="primary" floating>E-mail</ion-label>
-                    <ion-input></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label color="primary" floating>Login</ion-label>
-                    <ion-input></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label color="primary" floating>Senha</ion-label>
-                    <ion-input type="password"></ion-input>
-                </ion-item>
+                <form #form="ngForm">
+                    <!--
+                    <ion-item class="pet-margin">
+                        <ion-label color="primary" floating>Seu Nome Completo</ion-label>
+                        <ion-input formControlName="nome"></ion-input>
+                    </ion-item>
+                    -->
+                    <ion-item>
+                        <ion-label color="primary" floating>E-mail</ion-label>
+                        <ion-input type="text" name="email" [(ngModel)]="usuario.email" #email="ngModel" required></ion-input>
+                    </ion-item>
+                    <!--
+                    <ion-item>
+                        <ion-label color="primary" floating>Login</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                    -->
+                    <ion-item>
+                        <ion-label color="primary" floating>Senha</ion-label>
+                        <ion-input type="password" name="password" [(ngModel)]="usuario.password" #password="ngModel" required></ion-input>
+                    </ion-item>
+                </form>
             </ion-list>
         </ion-card-content>
     </ion-card>
@@ -43,7 +48,7 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <button ion-button full (click)="cadastrar()">Cadastrar</button>
+                <button ion-button full type="submit" [disabled]="!form.form.valid" (click)="createAccount()">Cadastrar</button>
             </ion-col>
         </ion-row>
     </ion-grid>

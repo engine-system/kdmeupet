@@ -16,16 +16,18 @@
 <ion-content>
     <ion-card>
         <ion-card-content text-center>
-            <ion-list no-lines>                                    
-                    <div class="title-pet">Informações do Pet</div>  
-                              
+            <ion-list no-lines>
+                <div class="title-pet">Informações do Pet</div>
+
                 <ion-item class="pet-margin">
                     <ion-label color="primary" floating>Nome</ion-label>
-                    <ion-input></ion-input>
+                    <ion-input [(ngModel)]="nome"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label color="primary" floating>Gênero</ion-label>
-                    <ion-input></ion-input>
+                    <ion-label floating>Genero</ion-label>
+                    <ion-select [(ngModel)]="genero">
+                        <ion-option *ngFor="let genero of generos" [value]="genero">{{genero.nome}}</ion-option>
+                    </ion-select>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Especie</ion-label>

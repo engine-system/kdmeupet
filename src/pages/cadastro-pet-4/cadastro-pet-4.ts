@@ -4,6 +4,7 @@ import { CadastroPet_5Page } from '../cadastro-pet-5/cadastro-pet-5';
 import { CadastroPet_3Page } from '../cadastro-pet-3/cadastro-pet-3';
 import { Geolocation } from '@ionic-native/geolocation'
 import { UtilProvider } from '../../providers/util/util';
+import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
 
 
 declare var google: any;
@@ -24,7 +25,8 @@ export class CadastroPet_4Page {
     public navCtrl: NavController,
     public navParams: NavParams,
     public geo: Geolocation,
-    public util: UtilProvider
+    public util: UtilProvider,
+    public cadastro:CadastropetProvider
   ) {
   }
   showMap() {
@@ -68,6 +70,7 @@ export class CadastroPet_4Page {
     })
   }
   public proximo() {
+    this.cadastro.ultimoLocalVisto = {'lat':this.lat,'lgt':this.lgt};
     this.navCtrl.push(CadastroPet_5Page);
   }
   public anterior() {
