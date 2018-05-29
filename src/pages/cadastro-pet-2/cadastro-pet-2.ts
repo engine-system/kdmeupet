@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_3Page } from '../cadastro-pet-3/cadastro-pet-3';
 import { CadastroPetPage } from '../cadastro-pet/cadastro-pet';
-import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
+import { PetProvider } from '../../providers/pet/pet-provider';
+import { Pet } from '../../model/pet';
 
 @IonicPage()
 @Component({
@@ -16,20 +17,14 @@ export class CadastroPet_2Page {
   public racas;
   public especies;
   public generos;
-  public cadastro1: any;
-  public cadastro2: any;
-  public nome;
-  public genero;
-  public especie;
-  public corPrimaria;
-  public corSecundaria;
-  public porte;
-  public idade;
+
+  public pet: Pet=new Pet();
+  public acao:any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public cadastro: CadastropetProvider) {
+    public petProvider: PetProvider) {
 
     this.generos = [
       {
@@ -110,22 +105,23 @@ export class CadastroPet_2Page {
   }
 
   ionViewDidLoad() {
+    this.pet = this.navParams.get('pet');
+    this.acao = this.navParams.get('acao');
     console.log('ionViewDidLoad CadastroPet_2Page');
   }
 
   public proximo() {
-    this.cadastro.nome = this.nome;
-    this.cadastro.genero = this.genero;
-    this.cadastro.especie = this.especie;
-    this.cadastro.cor1 = this.corPrimaria;
-    this.cadastro.cor2 = this.corSecundaria;
-    this.cadastro.porte = this.porte;
-    this.cadastro.idade = this.idade;
-    this.navCtrl.push(CadastroPet_3Page);
+    this.navCtrl.push(CadastroPet_3Page, {
+      'acao': this.acao,
+      'pet': this.pet,
+    });
   }
 
   public anterior() {
-    this.navCtrl.push(CadastroPetPage);
+    this.navCtrl.push(CadastroPetPage, {
+      'acao': this.acao,
+      'pet': this.pet,
+    });
   }
 
 }

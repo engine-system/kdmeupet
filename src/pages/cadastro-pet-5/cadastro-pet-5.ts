@@ -2,15 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { TabsPage } from '../tabs/tabs';
-import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
 import { UtilProvider } from '../../providers/util/util';
-
-/**
- * Generated class for the CadastroPet_5Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { PetProvider } from '../../providers/pet/pet-provider';
+import { Pet } from '../../model/pet';
 
 @IonicPage()
 @Component({
@@ -18,16 +12,19 @@ import { UtilProvider } from '../../providers/util/util';
   templateUrl: 'cadastro-pet-5.html',
 })
 export class CadastroPet_5Page {
-
+  public pet:Pet = new Pet();
+  public acao:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public cadastro: CadastropetProvider,
+    public petProvider: PetProvider,
     public util: UtilProvider) {
   }
 
   ionViewDidLoad() {
-    console.log(this.cadastro);
+    this.pet = this.navParams.get('pet');
+    this.acao = this.navParams.get('acao');
+    console.log(this.pet);
     console.log('ionViewDidLoad CadastroPet_5Page');
   }
 
@@ -35,7 +32,9 @@ export class CadastroPet_5Page {
     this.navCtrl.push(CadastroPet_4Page);
   }
   public concluir() {
-    this.cadastro.save(this.cadastro)
+
+    if(this.acao=='achado'){
+      this.petProvider.saveAchado(this.pet)
       .then(() => {
         this.util.createMessage('criado com sucesso');
         this.navCtrl.push(TabsPage);
@@ -44,6 +43,17 @@ export class CadastroPet_5Page {
         console.log(e);
         this.util.createMessage('Ocorreu um erro');
       });
+    }else{
+      this.petProvider.savePerdido(this.pet)
+      .then(() => {
+        this.util.createMessage('criado com sucesso');
+        this.navCtrl.push(TabsPage);
+      })
+      .catch((e) => {
+        console.log(e);
+        this.util.createMessage('Ocorreu um erro');
+      });
+    }
 
   }
 }

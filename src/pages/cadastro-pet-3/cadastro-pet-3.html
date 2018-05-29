@@ -1,27 +1,21 @@
-<!--
-  Generated template for the CadastroPet_3Page page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-        <ion-navbar color='secondary'>
-                <ion-title>Perdi meu Pet!</ion-title>
-        </ion-navbar>
+    <ion-navbar color='secondary'>
+        <ion-title>Perdi meu Pet!</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <div class="title-pet">        
-    Raça: {{ cadastroProvider.raca.nome }}
+    <div class="title-pet">
+        Raça: {{ pet.raca.nome }}
     </div>
     <ion-searchbar [(ngModel)]="inputName" [showCancelButton]="shouldShowCancel" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
     </ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let raca of racas" (click)="clicou(raca)">
-           <div class="list-pet">{{ raca.nome }}</div> 
+            <div class="list-pet">{{ raca.nome }}</div>
         </ion-item>
     </ion-list>
 </ion-content>

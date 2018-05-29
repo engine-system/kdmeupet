@@ -19,20 +19,20 @@
             <ion-list no-lines>
                 <div class="title-pet">Informações do Pet</div>
 
-                <ion-item class="pet-margin">
+                <ion-item class="pet-margin" *ngIf="acao=='perdido'">
                     <ion-label color="primary" floating>Nome</ion-label>
-                    <ion-input [(ngModel)]="nome"></ion-input>
+                    <ion-input [(ngModel)]="pet.nome"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Genero</ion-label>
-                    <ion-select [(ngModel)]="genero">
-                        <ion-option *ngFor="let genero of generos" [value]="genero">{{genero.nome}}</ion-option>
+                    <ion-select [(ngModel)]="pet.genero">
+                        <ion-option *ngFor="let genero of generos">{{genero.nome}}</ion-option>
                     </ion-select>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Especie</ion-label>
-                    <ion-select [(ngModel)]="especie">
-                        <ion-option *ngFor="let especie of especies" [value]="especie">{{especie.nome}}</ion-option>
+                    <ion-select [(ngModel)]="pet.especie">
+                        <ion-option *ngFor="let especie of especies">{{especie.nome}}</ion-option>
                     </ion-select>
                 </ion-item>
                 <ion-grid>
@@ -40,16 +40,16 @@
                         <ion-col col-6>
                             <ion-item>
                                 <ion-label floating>Cor 1</ion-label>
-                                <ion-select [(ngModel)]="corPrimaria">
-                                    <ion-option *ngFor="let cor of cores" [value]="cor">{{cor.nome}}</ion-option>
+                                <ion-select [(ngModel)]="pet.corPrimaria">
+                                    <ion-option *ngFor="let cor of cores">{{cor.nome}}</ion-option>
                                 </ion-select>
                             </ion-item>
                         </ion-col>
                         <ion-col col-6>
                             <ion-item>
                                 <ion-label floating>Cor 2</ion-label>
-                                <ion-select [(ngModel)]="corSecundaria">
-                                    <ion-option *ngFor="let cor of cores" [value]="cor">{{cor.nome}}</ion-option>
+                                <ion-select [(ngModel)]="pet.corSecundaria">
+                                    <ion-option *ngFor="let cor of cores">{{cor.nome}}</ion-option>
                                 </ion-select>
                             </ion-item>
                         </ion-col>
@@ -58,16 +58,16 @@
                         <ion-col col-6>
                             <ion-item>
                                 <ion-label floating>Porte</ion-label>
-                                <ion-select [(ngModel)]="porte">
-                                    <ion-option *ngFor="let porte of portes" [value]="porte">{{porte.nome}}</ion-option>
+                                <ion-select [(ngModel)]="pet.porte">
+                                    <ion-option *ngFor="let porte of portes">{{porte.nome}}</ion-option>
                                 </ion-select>
                             </ion-item>
                         </ion-col>
                         <ion-col col-6>
                             <ion-item>
                                 <ion-label floating>Idade</ion-label>
-                                <ion-select [(ngModel)]="idade">
-                                    <ion-option *ngFor="let idade of idades" [value]="idade">{{idade.nome}}</ion-option>
+                                <ion-select [(ngModel)]="pet.idade">
+                                    <ion-option *ngFor="let idade of idades">{{idade.nome}}</ion-option>
                                 </ion-select>
                             </ion-item>
                         </ion-col>

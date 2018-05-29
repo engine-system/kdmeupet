@@ -3,13 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 import { TabsPage } from '../tabs/tabs';
-import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
-/**
- * Generated class for the CadastroPetPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { PetProvider } from '../../providers/pet/pet-provider';
+import { Pet } from '../../model/pet';
 
 @IonicPage()
 @Component({
@@ -17,37 +12,71 @@ import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-pro
   templateUrl: 'cadastro-pet.html',
 })
 export class CadastroPetPage {
+  public pet:Pet = new Pet();
+  public acao:any;
   constructor(
     private camera: Camera,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public cadastro:CadastropetProvider
-  ) {}
+    public petProvider: PetProvider
+  ) {
+    this.acao = this.navParams.get('acao');
+    this.pet = this.navParams.get('pet');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroPetPage');
   }
 
-  public getFoto(){
+  public acaoFotografia(){
+    if(this.acao=='achado'){
+      this.tirarFoto();
+    }else{
+      this.getFoto();
+    }
+  }
+
+  
+
+  public getFoto() {
     const options: CameraOptions = {
       quality: 20,
       destinationType: this.camera.DestinationType.DATA_URL,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      saveToPhotoAlbum:false
+      saveToPhotoAlbum: false
     }
     this.camera.getPicture(options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
-      this.cadastro.foto = 'data:image/jpeg;base64,' + imageData;
+      this.pet.foto = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
+  }
+
+  public tirarFoto(){
+    const options: CameraOptions = {
+      quality: 20,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.pet.foto = 'data:image/jpeg;base64,' + imageData;
      }, (err) => {
       // Handle error
      });
   }
-  public proximo(){
-    this.navCtrl.push(CadastroPet_2Page);
+
+  public proximo() {
+    this.navCtrl.push(CadastroPet_2Page, {
+      'acao':this.acao,
+      'pet': this.pet
+    });
   }
-  public cancelar(){
-    this.cadastro.zerar();
+  public cancelar() {
     this.navCtrl.push(TabsPage)
   }
 }

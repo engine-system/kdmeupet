@@ -22,12 +22,10 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { ResumoPage } from '../pages/resumo/resumo';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
-import { CadastroPerdidoPage } from '../pages/cadastro-perdido/cadastro-perdido';
 import { CadastroPet_2Page } from '../pages/cadastro-pet-2/cadastro-pet-2';
 import { CadastroPet_3Page } from '../pages/cadastro-pet-3/cadastro-pet-3';
 import { CadastroPet_4Page } from '../pages/cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
-import { CadastropetProvider } from '../providers/cadastropet/cadastropet-provider';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes';
@@ -37,6 +35,7 @@ import { AuthService } from '../providers/auth/auth-service';
 import { CabecalhoPage } from '../pages/cabecalho/cabecalho';
 import { PopoverPage } from '../pages/popover/popover';
 import { User } from '../providers/auth/user';
+import { PetProvider } from '../providers/pet/pet-provider';
 /*PRODUÇÃO */
 const firebaseConfig={
   apiKey: "AIzaSyBtRvYg194vF2tbLPS0xnncPisCJlQUFDo",
@@ -58,7 +57,6 @@ const firebaseConfig={
     PerfilPage,
     ResumoPage,
     CadastroPage,
-    CadastroPerdidoPage,
     CadastroPetPage,
     CadastroPet_2Page,
     CadastroPet_3Page,
@@ -91,7 +89,6 @@ const firebaseConfig={
     PerfilPage,
     ResumoPage,
     CadastroPage,
-    CadastroPerdidoPage,
     CadastroPetPage,
     CadastroPet_2Page,
     CadastroPet_3Page,
@@ -112,7 +109,7 @@ const firebaseConfig={
     SocialSharing,
     Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    CadastropetProvider,
+    PetProvider,
     ConfiguracoesProvider,
     UtilProvider,
     User,

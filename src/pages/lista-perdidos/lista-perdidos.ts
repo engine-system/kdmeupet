@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Pet } from '../../model/pet';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { PetProvider } from '../../providers/pet/pet-provider';
 
 /**
  * Generated class for the ListaPerdidosPage page.
@@ -25,9 +25,9 @@ export class ListaPerdidosPage {
   constructor(public navCtrl: NavController,
     public afDB:AngularFireDatabase,
     public navParams: NavParams,
-    public cadastroProvider:CadastropetProvider) {
+    public petProvider:PetProvider) {
     
-    this.cadastroProvider.getAll().then(data=>{
+    this.petProvider.getAllPerdidos().then(data=>{
       this.pets = data;
     })
 

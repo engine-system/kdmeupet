@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
-import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
+import { Pet } from '../../model/pet';
 
 @IonicPage()
 @Component({
@@ -11,9 +11,15 @@ import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-pro
 })
 export class CadastroPet_3Page {
   racas: any[];
+  public pet:Pet = new Pet();
+  public acao:any;
   public inputName:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public cadastroProvider:CadastropetProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.pet = this.navParams.get('pet');
+    this.acao = this.navParams.get('acao');
+
     this.initializeItems();
+    
   }
 
   initializeItems() {
@@ -39,7 +45,7 @@ export class CadastroPet_3Page {
     }
   }
   clicou(raca) {
-    this.cadastroProvider.raca = raca;
+    this.pet.raca = raca;
     this.inputName = raca.nome;
     console.log(raca);
   }
@@ -51,10 +57,16 @@ export class CadastroPet_3Page {
     console.log('ionViewDidLoad CadastroPet_3Page');
   }
   public proximo() {
-    this.navCtrl.push(CadastroPet_4Page);
+    this.navCtrl.push(CadastroPet_4Page, {
+      'acao': this.acao,
+      'pet': this.pet,
+    });
   }
   public anterior() {
-    this.navCtrl.push(CadastroPet_2Page);
+    this.navCtrl.push(CadastroPet_2Page, {
+      'acao': this.acao,
+      'pet': this.pet,
+    });
   }
 
 }

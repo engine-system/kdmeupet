@@ -4,7 +4,7 @@ import { CadastroPet_5Page } from '../cadastro-pet-5/cadastro-pet-5';
 import { CadastroPet_3Page } from '../cadastro-pet-3/cadastro-pet-3';
 import { Geolocation } from '@ionic-native/geolocation'
 import { UtilProvider } from '../../providers/util/util';
-import { CadastropetProvider } from '../../providers/cadastropet/cadastropet-provider';
+import { Pet } from '../../model/pet';
 
 
 declare var google: any;
@@ -14,20 +14,20 @@ declare var google: any;
   templateUrl: 'cadastro-pet-4.html',
 })
 export class CadastroPet_4Page {
-
   lat: any;
   lgt: any;
   public endereco: string = '';
-
+  public pet:Pet;
+  public acao:any;
   @ViewChild('map') mapRef: ElementRef;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public geo: Geolocation,
-    public util: UtilProvider,
-    public cadastro:CadastropetProvider
+    public util: UtilProvider
   ) {
+
   }
   showMap() {
     const location = new google.maps.LatLng(this.lat, this.lgt);
@@ -59,21 +59,29 @@ export class CadastroPet_4Page {
   }
 
   ionViewDidLoad() {
+
+    this.pet = this.navParams.get('pet');
+    this.acao = this.navParams.get('acao');
+
     this.geo.getCurrentPosition().then(pos => {
 
       this.lat = pos.coords.latitude;
       this.lgt = pos.coords.longitude;
 
-      console.log(this.lat + "" + this.lgt)
-
       this.showMap();
     })
   }
   public proximo() {
-    this.cadastro.ultimoLocalVisto = {'lat':this.lat,'lgt':this.lgt};
-    this.navCtrl.push(CadastroPet_5Page);
+    this.pet.ultimoLocalVisto = {'lat':this.lat,'lgt':this.lgt};
+    this.navCtrl.push(CadastroPet_5Page, {
+      'acao': this.acao,
+      'pet': this.pet,
+    });
   }
   public anterior() {
-    this.navCtrl.push(CadastroPet_3Page);
+    this.navCtrl.push(CadastroPet_3Page, {
+      'acao': this.acao,
+      'pet': this.pet,
+    });
   }
 }
