@@ -30,7 +30,7 @@
                 <ion-card (click)="share()">
                     <img src="assets/imgs/dados-app2.jpg" />
                     <div class="title-analise">Informações</div>
-                    <div class="dado1">{{cadastrados}} Pets Cadastrados</div>
+                    <div class="dado1">{{cadastrados==0?'contando...':cadastrados}} Pets Cadastrados</div>
                     <div class="dado2">{{perdidos}} Pets Perdidos</div>
                 </ion-card>
                 <ion-card (click)="meuPerfil()">

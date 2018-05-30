@@ -27,7 +27,6 @@ import { CadastroPet_5Page } from '../pages/cadastro-pet-5/cadastro-pet-5';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConfiguracoesProvider } from '../providers/configuracoes/configuracoes';
-import { EditarPerfilPage } from '../pages/editar-perfil/editar-perfil';
 import { UtilProvider } from '../providers/util/util';
 import { AuthService } from '../providers/auth/auth-service';
 import { CabecalhoPage } from '../pages/cabecalho/cabecalho';
@@ -36,6 +35,7 @@ import { User } from '../providers/auth/user';
 import { PetProvider } from '../providers/pet/pet-provider';
 import { ListaPerdidosPage } from '../pages/listas/lista-perdidos/lista-perdidos';
 import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-encontrados';
+import { PerfilProvider } from '../providers/perfil/perfil';
 /*PRODUÇÃO */
 const firebaseConfig={
   apiKey: "AIzaSyBtRvYg194vF2tbLPS0xnncPisCJlQUFDo",
@@ -65,8 +65,7 @@ const firebaseConfig={
     CabecalhoPage,
     HomePage,
     TabsPage,
-    PopoverPage,
-    EditarPerfilPage
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -97,8 +96,7 @@ const firebaseConfig={
     CabecalhoPage,
     HomePage,
     TabsPage,
-    PopoverPage,
-    EditarPerfilPage
+    PopoverPage
   ],
   providers: [
     StatusBar,
@@ -110,10 +108,12 @@ const firebaseConfig={
     Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PetProvider,
+    PerfilProvider,
     ConfiguracoesProvider,
     UtilProvider,
     User,
-    AuthService
+    AuthService,
+    PerfilProvider
   ]
 })
 export class AppModule {}

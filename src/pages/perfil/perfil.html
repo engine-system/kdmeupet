@@ -6,13 +6,17 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>perfil</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>perfil</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <ion-item>
+        <ion-label color="primary" floating>Nome</ion-label>
+        <ion-input [(ngModel)]="user.nome"></ion-input>
+    </ion-item>
+    <button ion-button full (click)="save()">salvar</button>
 </ion-content>

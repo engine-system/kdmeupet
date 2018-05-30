@@ -19,6 +19,7 @@ export class CadastroPet_5Page {
     public navParams: NavParams,
     public petProvider: PetProvider,
     public util: UtilProvider) {
+      this.pet.zerar();
   }
 
   ionViewDidLoad() {
