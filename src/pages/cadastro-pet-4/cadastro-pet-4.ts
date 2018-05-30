@@ -49,7 +49,11 @@ export class CadastroPet_4Page {
     })
   }
   getEndereco() {
-    this.util.getEnderecoLatLong(this.lat, this.lgt)
+    let endereco = {
+      'lat':this.lat,
+      'lgt':this.lgt
+    }
+    this.util.getEnderecoLatLong(endereco)
       .then((data: any) => {
         this.endereco = data.results[0].formatted_address;
       })

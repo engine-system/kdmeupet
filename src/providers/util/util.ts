@@ -22,8 +22,8 @@ export class UtilProvider {
   createMessage(msg:string){
     this.toast.create({message:msg,duration:3000,position:'bottom'}).present();
   }
-  getEnderecoLatLong(lat, long) {
-    let url = this.config.ENDERECO_MAPS + '?latlng=' + lat + ',' + long + '&key=' + this.config.APIMAPSKEY
+  getEnderecoLatLong(endereco) {
+    let url = this.config.ENDERECO_MAPS + '?latlng=' + endereco.lat + ',' + endereco.lgt + '&key=' + this.config.APIMAPSKEY
     console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url)

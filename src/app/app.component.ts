@@ -9,7 +9,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { User } from '../providers/auth/user';
-import { ListaPerdidosPage } from '../pages/lista-perdidos/lista-perdidos';
 
 @Component({
   templateUrl: 'app.html'

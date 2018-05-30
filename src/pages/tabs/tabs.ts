@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
-import { ListaPerdidosPage } from '../lista-perdidos/lista-perdidos';
-import { ListaEncontradosPage } from '../lista-encontrados/lista-encontrados';
 import { MensagensPage } from '../mensagens/mensagens';
+import { ListaPerdidosPage } from '../listas/lista-perdidos/lista-perdidos';
+import { ListaEncontradosPage } from '../listas/lista-encontrados/lista-encontrados';
 
 @Component({
   templateUrl: 'tabs.html'

@@ -1,0 +1,48 @@
+<!--
+  Generated template for the ListaPerdidosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Pets Encontrados na rua</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content class="colored-background">
+    <ion-item class="transparencia" no-lines *ngFor="let pet of pets">
+        <ion-card (click)="irPet(pet)">
+            <ion-card-content>
+                <img src={{pet.foto}} />
+                <div class="ficha">
+                    <div class="linha" style="white-space: normal">
+                        Nome: {{pet.nome}}
+                    </div>
+                    <div class="linha duplo" style="white-space: normal">
+                        <div>
+                            Cor Primária: {{pet.cor1.nome}}
+                        </div>
+                        <div>
+                            Cor Secundária: {{pet.cor2.nome}}
+                        </div>
+                    </div>
+                    <div class="linha duplo">
+                        <div class="linha" style="white-space: normal">
+                            Idade: {{pet.idade.nome}}
+                        </div>
+                        <div class="linha" style="white-space: normal">
+                            Genero: {{pet.genero.nome}}
+                        </div>
+                    </div>
+                    <div class="linha" style="white-space: normal">
+                        Ultimo local: {{pet.nomeLocal}}
+                    </div>
+                </div>
+            </ion-card-content>
+
+        </ion-card>
+    </ion-item>
+</ion-content>

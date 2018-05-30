@@ -1,0 +1,69 @@
+ion-content {
+    background-color: #E3E3E1 !important;
+}
+
+.transparencia {
+    background-color: transparent !important;
+}
+
+.titulo-receita {
+    font-size: 1.2em;
+    padding: 5%;
+}
+
+.titulo-categoria {
+    font-size: 1em;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
+
+.linhas {
+    line-height: 0.5;
+    text-align: center;
+}
+
+.linhas span {
+    display: inline-block;
+    position: relative;
+}
+
+.linhas span:before,
+.linhas span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    top: 0;
+    width: 500%;
+}
+
+.linhas span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.linhas span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+.ficha {
+    margin-top: 10px;
+    display: grid;
+    grid-template: "linha";
+}
+
+.linha-ficha {
+    grid-area: "linha";
+}
+
+.duplo {
+    display: grid;
+    grid-template: "cor cor";
+}
+
+.cor {
+    grid-area: "cor";
+}

@@ -14,8 +14,8 @@ import { Pet } from '../../model/pet';
 })
 export class HomePage {
 
-  public cadastrados: number;
-  public perdidos: number;
+  public cadastrados: string='contando...';
+  public perdidos: string='contando...';
   public mensagens: number;
   message: string = null;
   file: string = null;
@@ -26,10 +26,22 @@ export class HomePage {
     public petProvider: PetProvider,
     private admobFree: AdMobFree,
     private socialSharing: SocialSharing) {
-    this.cadastrados = 50;
-    this.perdidos = 23;
+    this.contagem();
     this.mensagens = 56;
     this.showBannerAd();
+  }
+  public contagem(){
+    
+    this.petProvider.getAllAchados().then(data => {
+      let pets
+      pets = data;
+      this.cadastrados = pets.length;
+    })
+    this.petProvider.getAllPerdidos().then(data => {
+      let pets
+      pets = data;
+      this.perdidos = pets.length;
+    })
   }
   public meuPerfil() {
     this.navCtrl.push(EditarPerfilPage);

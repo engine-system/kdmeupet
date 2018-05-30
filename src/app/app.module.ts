@@ -15,8 +15,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MensagensPage } from '../pages/mensagens/mensagens';
-import { ListaPerdidosPage } from '../pages/lista-perdidos/lista-perdidos';
-import { ListaEncontradosPage } from '../pages/lista-encontrados/lista-encontrados';
 import { LoginPage } from '../pages/login/login';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { ResumoPage } from '../pages/resumo/resumo';
@@ -36,6 +34,8 @@ import { CabecalhoPage } from '../pages/cabecalho/cabecalho';
 import { PopoverPage } from '../pages/popover/popover';
 import { User } from '../providers/auth/user';
 import { PetProvider } from '../providers/pet/pet-provider';
+import { ListaPerdidosPage } from '../pages/listas/lista-perdidos/lista-perdidos';
+import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-encontrados';
 /*PRODUÇÃO */
 const firebaseConfig={
   apiKey: "AIzaSyBtRvYg194vF2tbLPS0xnncPisCJlQUFDo",
