@@ -6,13 +6,47 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>pet-individual</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>pet-individual</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="colored-background">
+    <ion-item class="transparencia" no-lines>
+        <ion-card (click)="irPet(pet)">
+            <ion-card-content>
+                <img src={{pet.foto}} />
+                <div text-center class="titulo-categoria linhas" style="white-space: normal">
+                    <span>{{pet.raca.nome}}</span>
+                </div>
+                <div class="ficha">
+                    <div class="linha" style="white-space: normal">
+                        Nome: {{pet.nome}}
+                    </div>
+                    <div class="linha duplo" style="white-space: normal">
+                        <div>
+                            Cor Primária: {{pet.cor1.nome}}
+                        </div>
+                        <div>
+                            Cor Secundária: {{pet.cor2.nome}}
+                        </div>
+                    </div>
+                    <div class="linha duplo">
+                        <div class="linha" style="white-space: normal">
+                            Idade: {{pet.idade.nome}}
+                        </div>
+                        <div class="linha" style="white-space: normal">
+                            Genero: {{pet.genero.nome}}
+                        </div>
+                    </div>
+                    <div class="linha" style="white-space: normal">
+                        Ultimo local: {{pet.nomeLocal}}
+                    </div>
+                </div>
+            </ion-card-content>
 
+        </ion-card>
+    </ion-item>
 </ion-content>
