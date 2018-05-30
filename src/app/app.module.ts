@@ -36,6 +36,7 @@ import { PetProvider } from '../providers/pet/pet-provider';
 import { ListaPerdidosPage } from '../pages/listas/lista-perdidos/lista-perdidos';
 import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-encontrados';
 import { PerfilProvider } from '../providers/perfil/perfil';
+import { PetIndividualPage } from '../pages/pet-individual/pet-individual';
 /*PRODUÇÃO */
 const firebaseConfig={
   apiKey: "AIzaSyBtRvYg194vF2tbLPS0xnncPisCJlQUFDo",
@@ -65,7 +66,8 @@ const firebaseConfig={
     CabecalhoPage,
     HomePage,
     TabsPage,
-    PopoverPage
+    PopoverPage,
+    PetIndividualPage
   ],
   imports: [
     BrowserModule,
@@ -96,7 +98,8 @@ const firebaseConfig={
     CabecalhoPage,
     HomePage,
     TabsPage,
-    PopoverPage
+    PopoverPage,
+    PetIndividualPage
   ],
   providers: [
     StatusBar,

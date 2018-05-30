@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { PetProvider } from '../../../providers/pet/pet-provider';
 import { UtilProvider } from '../../../providers/util/util';
+import { PetIndividualPage } from '../../pet-individual/pet-individual';
 
 /**
  * Generated class for the ListaPerdidosPage page.
@@ -39,7 +40,9 @@ export class ListaPerdidosPage {
   }
 
   irPet(pet) {
-    console.log(pet);
+    this.navCtrl.push(PetIndividualPage,{
+      'pet':pet
+    })
   }
 
   ultimoLocal(pet) {

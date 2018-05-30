@@ -12,14 +12,14 @@
                     <img src="assets/imgs/perdi-meu-pet.jpg" />
                     <div class="title-pet">Perdi meu pet!</div>
 
-                    <div class="subtitle-pet">Cadastre o pet que você perdeu, com foto, localização e mais</div>
+                    <div class="subtitle-pet">Cadastre seu amiguinho para sabermos mais sobre ele</div>
                 </ion-card>
             </ion-col>
             <ion-col col-6>
                 <ion-card (click)="acheiUmPet()">
                     <img src="assets/imgs/achei-meu-pet.jpg" />
                     <div class="title-pet">Achei um pet!</div>
-                    <div class="subtitle-pet">Cadastre o pet que você encontrou, com foto, localização e mais</div>
+                    <div class="subtitle-pet">Ajude seu amiguinho a voltar para casa</div>
                 </ion-card>
             </ion-col>
         </ion-row>
@@ -29,8 +29,8 @@
             <ion-col col-12>
                 <ion-card (click)="share()">
                     <img src="assets/imgs/dados-app2.jpg" />
-                    <div class="title-analise">Informações</div>
-                    <div class="dado1">{{cadastrados==0?'contando...':cadastrados}} Pets Cadastrados</div>
+                    <div class="title-analise"> </div>
+                    <div class="dado1">{{cadastrados}} Pets Achados na rua</div>
                     <div class="dado2">{{perdidos}} Pets Perdidos</div>
                 </ion-card>
                 <ion-card (click)="meuPerfil()">
