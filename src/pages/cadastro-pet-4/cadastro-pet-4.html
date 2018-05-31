@@ -15,7 +15,7 @@
     <div #map id="map"></div>
 </ion-content>
 
-<ion-footer no-shadow>
+<ion-footer no-shadow *ngIf="!acaoMostrarPet()">
     <ion-toolbar position="bottom">
         <ion-grid>
             <ion-row>
@@ -23,5 +23,10 @@
                 <ion-col col-6><button ion-button full (click)="proximo()">Próximo</button></ion-col>
             </ion-row>
         </ion-grid>
+    </ion-toolbar>
+</ion-footer>
+<ion-footer no-shadow *ngIf="acaoMostrarPet()">
+    <ion-toolbar position="bottom">
+        <button ion-button full (click)="chamarNavegador()">Ir até lá</button>
     </ion-toolbar>
 </ion-footer>

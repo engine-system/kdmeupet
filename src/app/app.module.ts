@@ -37,7 +37,7 @@ import { ListaPerdidosPage } from '../pages/listas/lista-perdidos/lista-perdidos
 import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-encontrados';
 import { PerfilProvider } from '../providers/perfil/perfil';
 import { PetIndividualPage } from '../pages/pet-individual/pet-individual';
-import { MapIndividualPage } from '../pages/map-individual/map-individual';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 /*PRODUÇÃO */
 const firebaseConfig={
@@ -69,7 +69,6 @@ const firebaseConfig={
     HomePage,
     TabsPage,
     PopoverPage,
-    MapIndividualPage,
     PetIndividualPage
   ],
   imports: [
@@ -102,8 +101,7 @@ const firebaseConfig={
     HomePage,
     TabsPage,
     PopoverPage,
-    PetIndividualPage,
-    MapIndividualPage
+    PetIndividualPage
   ],
   providers: [
     StatusBar,
@@ -120,6 +118,7 @@ const firebaseConfig={
     UtilProvider,
     User,
     AuthService,
+    LaunchNavigator,
     PerfilProvider
   ]
 })

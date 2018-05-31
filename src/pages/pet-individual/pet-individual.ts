@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PetProvider } from '../../providers/pet/pet-provider';
-import { MapIndividualPage } from '../map-individual/map-individual';
+import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 
 /**
  * Generated class for the PetIndividualPage page.
@@ -30,8 +30,9 @@ export class PetIndividualPage {
   }
 
   mapaUltimoLocal(){
-    this.navCtrl.push(MapIndividualPage,{
-      'map':this.pet.ultimoLocalVisto
+    this.navCtrl.push(CadastroPet_4Page,{
+      'acao':'mostrarLocalPet',
+      'pet':this.pet
     })
     console.log(this.pet.ultimoLocalVisto);
   }
