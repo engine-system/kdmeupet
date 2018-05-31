@@ -13,22 +13,22 @@
 </ion-header>
 
 <ion-content padding>
-    <div *ngFor="let pet of pets">        
-        <!--<div class="overlay"></div> -->   
-        <ion-card (click)="irPet(pet)">         
-            <img src={{pet.foto}} />
-            <div class="card-subtitle">
-                <a>Ultimo local: {{pet.nomeLocal}}</a>
+                          
+            <div *ngFor="let pet of pets">                           
+                <ion-card (click)="irPet(pet)">         
+                    <img src={{pet.foto}} />
+                    <div class="card-subtitle">
+                        <a>Ultimo local: {{pet.nomeLocal}}</a>
+                    </div>
+                    <div class="card-title">
+                    <button ion-button medium >
+                        <div>Ver informações do pet</div>
+                    </button>             
+                    </div>                          
+                </ion-card>
             </div>
-            <div class="card-title">
-            <button ion-button medium >
-                    <div>Ver informações do pet</div>
-            </button>  
+ 
 
-            </div>       
-                      
-        </ion-card>
-    </div>
 </ion-content>
            <!--
                 <ion-card-content>

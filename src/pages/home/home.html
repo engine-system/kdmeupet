@@ -21,12 +21,14 @@
                     <div class="title-pet">Achei um pet!</div>
                     <div class="subtitle-pet">Ajude seu amiguinho a voltar para casa</div>
                 </ion-card>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-    <ion-grid>
-        <ion-row>
-            <ion-col col-12>
+            </ion-col>        
+            <ion-col col-12 class="alinhamento">
+                <ion-card (click)="share()">
+                        <img src="assets/imgs/ajuda.jpg" />
+                        <div class="title-analise"> </div>
+                        <div class="dado1">Quer ajudar o KD Meu Pet?</div>
+                        <div class="dado2">Veja um vídeo!</div>
+                    </ion-card>
                 <ion-card (click)="share()">
                     <img src="assets/imgs/dados-app2.jpg" />
                     <div class="title-analise"> </div>

@@ -24,14 +24,14 @@ ion-content{
 
     .dado1 {
         position: absolute;
-        top:40%;
+        top:20%;
         font-size: 1.1em;
         color: #fff;
         margin-left: 29%;
     }
     .dado2 {
         position: absolute;
-        top:60%;
+        top:50%;
         font-size: 1.1em;
         color: #fff;        
         margin-left: 29%;
@@ -39,10 +39,11 @@ ion-content{
    
     .title-registro {
         position: absolute;
-        top: 40%;
+        top: 30%;
         font-size: 1.3em;
         width: 100%;
-        color: #fff;
+        color: #fff;          
+        margin-left: -5%;
     }
     .title-pet {
         position: absolute;
@@ -58,6 +59,10 @@ ion-content{
         padding: 10px;
         width: 100%;
         color: #fff;
+    }
+    .alinhamento
+    {
+        margin-top: -5%;
     }
 }
 }
