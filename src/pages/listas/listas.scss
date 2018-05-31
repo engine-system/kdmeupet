@@ -1,69 +1,46 @@
-ion-content {
-    background-color: #E3E3E1 !important;
+
+ion-content{
+    background-image:url("../assets/imgs/pattern-back.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.transparencia {
-    background-color: transparent !important;
-}
-
-.titulo-receita {
-    font-size: 1.2em;
-    padding: 5%;
-}
-
-.titulo-categoria {
-    font-size: 1em;
-    font-weight: lighter;
-    text-transform: uppercase;
-    margin-top: 5%;
-}
-
-.linhas {
-    line-height: 0.5;
-    text-align: center;
-}
-
-.linhas span {
-    display: inline-block;
+ion-card {
     position: relative;
+    text-align: center;      
 }
-
-.linhas span:before,
-.linhas span:after {
-    content: "";
+.overlay{
+    background-color: black;
+    opacity: .3;
+    width: 308px;
+    height: 231px;
     position: absolute;
-    height: 5px;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    top: 0;
-    width: 500%;
+    z-index: 10;
+    left: 26px;
 }
 
-.linhas span:before {
-    right: 100%;
-    margin-right: 15px;
-}
 
-.linhas span:after {
-    left: 100%;
-    margin-left: 15px;
-}
 
-.ficha {
-    margin-top: 10px;
-    display: grid;
-    grid-template: "linha";
-}
+  .card-title {
+    position: absolute;
+    top: 80%;
+    z-index: 11;    
+    padding-left: 5px;
+  }
 
-.linha-ficha {
-    grid-area: "linha";
-}
-
-.duplo {
-    display: grid;
-    grid-template: "cor cor";
-}
-
-.cor {
-    grid-area: "cor";
-}
+  .card-subtitle {
+    font-size: 1em;
+    position: absolute;
+    top: 72%;    
+    z-index: 11;
+    white-space: normal; 
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    padding: 5px;
+  }
+  .card-subtitle a{
+      z-index: 12;      
+        color: #fff;
+  }
