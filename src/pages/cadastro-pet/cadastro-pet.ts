@@ -5,6 +5,7 @@ import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 import { TabsPage } from '../tabs/tabs';
 import { PetProvider } from '../../providers/pet/pet-provider';
 import { Pet } from '../../model/pet';
+import { UtilProvider } from '../../providers/util/util';
 
 @IonicPage()
 @Component({
@@ -18,7 +19,8 @@ export class CadastroPetPage {
     private camera: Camera,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public petProvider: PetProvider
+    public petProvider: PetProvider,
+    public util:UtilProvider
   ) {
     this.acao = this.navParams.get('acao');
     this.pet = this.navParams.get('pet');
@@ -71,10 +73,15 @@ export class CadastroPetPage {
   }
 
   public proximo() {
-    this.navCtrl.push(CadastroPet_2Page, {
-      'acao':this.acao,
-      'pet': this.pet
-    });
+    if(this.pet.foto){
+      this.navCtrl.push(CadastroPet_2Page, {
+        'acao':this.acao,
+        'pet': this.pet
+      });
+    }else{
+      this.util.createMessage("Favor inserir uma foto");
+    }
+    
   }
   public cancelar() {
     this.navCtrl.push(TabsPage)
