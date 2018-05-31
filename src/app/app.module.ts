@@ -38,6 +38,10 @@ import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-en
 import { PerfilProvider } from '../providers/perfil/perfil';
 import { PetIndividualPage } from '../pages/pet-individual/pet-individual';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
+import { NosajudePage } from '../pages/nosajude/nosajude';
+import { VideoPage } from '../pages/video/video';
+import { DoacaoPage } from '../pages/doacao/doacao';
+import { RecompensaPage } from '../pages/recompensa/recompensa';
 
 /*PRODUÇÃO */
 const firebaseConfig={
@@ -69,7 +73,11 @@ const firebaseConfig={
     HomePage,
     TabsPage,
     PopoverPage,
-    PetIndividualPage
+    PetIndividualPage,
+    NosajudePage,
+    VideoPage,
+    DoacaoPage,
+    RecompensaPage
   ],
   imports: [
     BrowserModule,
@@ -101,7 +109,11 @@ const firebaseConfig={
     HomePage,
     TabsPage,
     PopoverPage,
-    PetIndividualPage
+    PetIndividualPage,
+    NosajudePage,
+    VideoPage,
+    DoacaoPage,
+    RecompensaPage
   ],
   providers: [
     StatusBar,
