@@ -9,6 +9,7 @@ export class PetProvider {
   public pet: Pet;
   private PATHPERDIDOS = 'perdidos/';
   private PATHPACHADOS = 'achados/';
+  private PATHMENSAGEM = 'mensagens/';
 
   constructor(
     private db: AngularFireDatabase,

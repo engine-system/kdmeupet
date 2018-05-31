@@ -37,6 +37,8 @@ import { ListaPerdidosPage } from '../pages/listas/lista-perdidos/lista-perdidos
 import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-encontrados';
 import { PerfilProvider } from '../providers/perfil/perfil';
 import { PetIndividualPage } from '../pages/pet-individual/pet-individual';
+import { MapIndividualPage } from '../pages/map-individual/map-individual';
+
 /*PRODUÇÃO */
 const firebaseConfig={
   apiKey: "AIzaSyBtRvYg194vF2tbLPS0xnncPisCJlQUFDo",
@@ -67,6 +69,7 @@ const firebaseConfig={
     HomePage,
     TabsPage,
     PopoverPage,
+    MapIndividualPage,
     PetIndividualPage
   ],
   imports: [
@@ -99,7 +102,8 @@ const firebaseConfig={
     HomePage,
     TabsPage,
     PopoverPage,
-    PetIndividualPage
+    PetIndividualPage,
+    MapIndividualPage
   ],
   providers: [
     StatusBar,

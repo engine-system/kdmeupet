@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PetProvider } from '../../providers/pet/pet-provider';
+import { MapIndividualPage } from '../map-individual/map-individual';
 
 /**
  * Generated class for the PetIndividualPage page.
@@ -15,13 +17,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PetIndividualPage {
   public pet:any
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+  public petProvider:PetProvider) {
     this.pet = this.navParams.get('pet');
     console.log(this.pet);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PetIndividualPage');
+  }
+
+  mapaUltimoLocal(){
+    this.navCtrl.push(MapIndividualPage,{
+      'map':this.pet.ultimoLocalVisto
+    })
+    console.log(this.pet.ultimoLocalVisto);
   }
 
 }

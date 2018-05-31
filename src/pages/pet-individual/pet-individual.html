@@ -15,7 +15,7 @@
 
 <ion-content class="colored-background">
     <ion-item class="transparencia" no-lines>
-        <ion-card (click)="irPet(pet)">
+        <ion-card>
             <ion-card-content>
                 <img src={{pet.foto}} />
                 <div text-center class="titulo-categoria linhas" style="white-space: normal">
@@ -47,6 +47,12 @@
                 </div>
             </ion-card-content>
 
+        </ion-card>
+    </ion-item>
+    <button ion-button full (click)="mapaUltimoLocal()">Mapa do ultimo local</button>
+    <ion-item class="transparencia" no-lines *ngFor="let mensagem of mensagens">
+        <ion-card>
+            {{mensagem.texto}}
         </ion-card>
     </ion-item>
 </ion-content>

@@ -36,7 +36,6 @@ export class ListaPerdidosPage {
         this.ultimoLocal(pet);
       });
     })
-
   }
 
   irPet(pet) {
