@@ -10,6 +10,7 @@ import { PerfilPage } from '../perfil/perfil';
 import { User } from '../../providers/auth/user';
 import { PerfilProvider } from '../../providers/perfil/perfil';
 import { UtilProvider } from '../../providers/util/util';
+import { NosajudePage } from '../nosajude/nosajude';
 
 @Component({
   selector: 'page-home',
@@ -82,6 +83,9 @@ export class HomePage {
     'acao': 'achado',
     'pet': pet
   })
+}
+nosAjude(){
+  this.navCtrl.push(NosajudePage);
 }
 share() {
   this.link = "http://google.com";

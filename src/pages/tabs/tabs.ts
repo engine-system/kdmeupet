@@ -14,8 +14,7 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = ListaPerdidosPage;
   tab3Root = ListaEncontradosPage;
-  tab4Root = NosajudePage;
-
+  
   constructor() {
 
   }

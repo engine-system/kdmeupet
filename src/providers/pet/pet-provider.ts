@@ -129,7 +129,9 @@ export class PetProvider {
           raca: pet.raca,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
-        .then(() => resolve());
+        .then((data) => {
+          resolve()
+        });
     })
   }
 
