@@ -42,6 +42,7 @@ import { NosajudePage } from '../pages/nosajude/nosajude';
 import { VideoPage } from '../pages/video/video';
 import { DoacaoPage } from '../pages/doacao/doacao';
 import { RecompensaPage } from '../pages/recompensa/recompensa';
+import { FcmProvider } from '../providers/fcm/fcm';
 
 /*PRODUÇÃO */
 const firebaseConfig={
@@ -131,7 +132,8 @@ const firebaseConfig={
     User,
     AuthService,
     LaunchNavigator,
-    PerfilProvider
+    PerfilProvider,
+    FcmProvider
   ]
 })
 export class AppModule {}
