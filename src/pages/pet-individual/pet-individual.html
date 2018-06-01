@@ -70,10 +70,15 @@
             <button ion-button full (click)="mapaUltimoLocal()">Mapa do ultimo local</button>
             </ion-card-content>
 
+            <ion-item class="pet-margin" >
+                <ion-label color="primary" floating>Mensagem</ion-label>
+                <ion-input [(ngModel)]="mensagem"></ion-input>
+            </ion-item>
+            <button ion-button full (click)="saveMensagem()">Enviar Mensagem</button>
         </ion-card>
         <ion-item class="transparencia" no-lines *ngFor="let mensagem of mensagens">
         <ion-card>
-            {{mensagem.texto}}
+            {{mensagem.mensagem}}
         </ion-card>
     </ion-item>
 </ion-content>

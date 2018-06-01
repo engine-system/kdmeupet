@@ -16,7 +16,9 @@ import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
   templateUrl: 'pet-individual.html',
 })
 export class PetIndividualPage {
-  public pet:any
+  public pet:any;
+  public mensagens:any;
+  public mensagem:string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,15 +28,25 @@ export class PetIndividualPage {
   }
 
   ionViewDidLoad() {
+    //this.carregaMensagens();
+    console.log(this.mensagens);
     console.log('ionViewDidLoad PetIndividualPage');
   }
-
+  carregaMensagens(){
+    for(let i;i>=this.pet.mensagens.length();i++){
+      console.log(i);
+    }
+  }
   mapaUltimoLocal(){
     this.navCtrl.push(CadastroPet_4Page,{
       'acao':'mostrarLocalPet',
       'pet':this.pet
     })
     console.log(this.pet.ultimoLocalVisto);
+  }
+
+  saveMensagem(){
+    this.petProvider.mensagemPerdido(this.pet.key,this.mensagem);
   }
 
 }

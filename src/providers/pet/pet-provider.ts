@@ -8,7 +8,7 @@ import { Pet } from '../../model/pet';
 export class PetProvider {
   public pet: Pet;
   private PATHPERDIDOS = 'perdidos/';
-  private PATHPACHADOS = 'achados/';
+  private PATHACHADOS = 'achados/';
   private PATHMENSAGEM = 'mensagens/';
 
   constructor(
@@ -31,6 +31,16 @@ export class PetProvider {
 
   getPerdido(key: string) {
     return this.db.object(this.PATHPERDIDOS + key)
+  }
+  colocaKeyAchado(key:any){
+    return new Promise((resolve, reject) => {
+      this.db.list(this.PATHACHADOS)
+        .update(key, {
+          key:key
+        })
+        .then(() => resolve())
+        .catch((e) => reject(e));
+    })
   }
   colocaKeyPerdido(key:any){
     return new Promise((resolve, reject) => {
@@ -65,7 +75,6 @@ export class PetProvider {
 
   }
   savePerdido(pet: any) {
-
     return new Promise((resolve, reject) => {
       this.db.list(this.PATHPERDIDOS)
         .push({
@@ -101,7 +110,7 @@ export class PetProvider {
   }
   getAllAchados(): Promise<any> {
     let pro = new Promise((resolv, reject) => {
-      this.db.list(this.PATHPACHADOS).valueChanges().subscribe(data => {
+      this.db.list(this.PATHACHADOS).valueChanges().subscribe(data => {
         resolv(data);
       },
         err => {
@@ -114,7 +123,7 @@ export class PetProvider {
 
   updateAchado(pet: any) {
     return new Promise((resolve, reject) => {
-      this.db.list(this.PATHPACHADOS)
+      this.db.list(this.PATHACHADOS)
         .update(pet.key, {
           responsavelCadastro: this.userProvider.logado,
           nome: pet.nome,
@@ -136,7 +145,7 @@ export class PetProvider {
 
   saveAchado(pet: any) {
     return new Promise((resolve, reject) => {
-      this.db.list(this.PATHPACHADOS)
+      this.db.list(this.PATHACHADOS)
         .push({
           responsavelCadastro: this.userProvider.logado,
           nome: pet.nome,
@@ -152,17 +161,46 @@ export class PetProvider {
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then((data) => {
+          let key = data.key;
+          this.colocaKeyAchado(key)
+            .then(() => {
+              console.log("key inserida");
+            })
+            .catch((e) => {
+            });
           resolve()
         });
     })
   }
 
   getAchado(key: string) {
-    return this.db.object(this.PATHPACHADOS + key)
+    return this.db.object(this.PATHACHADOS + key)
   }
 
   removeAchado(key: string) {
-    this.db.list(this.PATHPACHADOS).remove(key);
+    this.db.list(this.PATHACHADOS).remove(key);
   }
 
+  mensagemPerdido(key:string,mensagem:string){
+    let refPet = this.db.database.ref(this.PATHPERDIDOS+key).child('mensagens');
+    refPet.push({
+      mensagem: mensagem,
+    })
+  }
+/*
+  getAllMensagensPerdidos(key): Promise<any> {
+    let pro = new Promise((resolv, reject) => {
+      this.db.database.ref(this.PATHPERDIDOS+key).child('mensagens').subscribe(data => {
+        resolv(data);
+      },
+        err => {
+          console.log(err);
+          reject(err);
+        })
+    })
+    return pro;
+  }*/
 }
+
+
+

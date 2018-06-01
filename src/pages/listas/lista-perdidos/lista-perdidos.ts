@@ -8,13 +8,6 @@ import { PetProvider } from '../../../providers/pet/pet-provider';
 import { UtilProvider } from '../../../providers/util/util';
 import { PetIndividualPage } from '../../pet-individual/pet-individual';
 
-/**
- * Generated class for the ListaPerdidosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-lista-perdidos',
@@ -32,6 +25,7 @@ export class ListaPerdidosPage {
 
     this.petProvider.getAllPerdidos().then(data => {
       this.pets = data;
+      console.log(this.pets);
       this.pets.forEach(pet => {
         this.ultimoLocal(pet);
       });
