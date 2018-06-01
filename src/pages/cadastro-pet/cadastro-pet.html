@@ -16,13 +16,13 @@
     <ion-grid>
         <ion-row>
             <ion-col col-12>
-                <ion-card>
+                <ion-card class="borda">
                     <img src="{{pet.foto?pet.foto:'assets/imgs/foto2.jpg'}}" />
                 </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
-    <button ion-button full (click)="acaoFotografia()">Inserir Foto</button>
+    <button ion-button block (click)="acaoFotografia()" class="borda">Inserir Foto</button>
 </ion-content>
 
 <ion-footer no-shadow>
@@ -30,10 +30,10 @@
         <ion-grid>
             <ion-row>
                 <ion-col col-6>
-                    <button ion-button full (click)="cancelar()">Cancelar</button>
+                    <button ion-button full (click)="cancelar()" class="borda">Cancelar</button>
                 </ion-col>
                 <ion-col col-6>
-                    <button ion-button full (click)="proximo()">Próximo</button>
+                    <button ion-button full (click)="proximo()" class="borda">Próximo</button>
                 </ion-col>
             </ion-row>
         </ion-grid>
