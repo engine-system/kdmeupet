@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 import { Pet } from '../../model/pet';
+import { UtilProvider } from '../../providers/util/util';
 
 @IonicPage()
 @Component({
@@ -11,26 +12,22 @@ import { Pet } from '../../model/pet';
 })
 export class CadastroPet_3Page {
   racas: any[];
-  public pet:Pet = new Pet();
-  public acao:any;
-  public inputName:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public pet: Pet = new Pet();
+  public acao: any;
+  public inputName: string;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public util: UtilProvider) {
     this.pet = this.navParams.get('pet');
     this.acao = this.navParams.get('acao');
 
     this.initializeItems();
-    
+
   }
 
   initializeItems() {
-    this.racas = [{
-      codigo: '01',
-      nome: 'Border Collie'
-    }, {
-      codigo: '02',
-      nome: 'Chiu au Á'
-    }
-    ];
+    this.util.getRacasCachorro();
   }
 
   getItems(ev: any) {
