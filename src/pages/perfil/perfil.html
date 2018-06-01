@@ -18,5 +18,13 @@
         <ion-label color="primary" floating>Nome</ion-label>
         <ion-input [(ngModel)]="user.nome"></ion-input>
     </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Telefone</ion-label>
+        <ion-input [(ngModel)]="user.telefone"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating>Endereço</ion-label>
+        <ion-input [(ngModel)]="user.endereco"></ion-input>
+    </ion-item>
     <button ion-button full (click)="save()">salvar</button>
 </ion-content>

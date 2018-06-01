@@ -25,7 +25,8 @@ export class PerfilPage {
       if(data){
         this.user.key = data['key'];
       this.user.nome = data['val']['nome'];
-      console.log(data)
+      this.user.endereco = data['val']['endereco'];
+      this.user.telefone = data['val']['telefone'];
       }
     })
   }

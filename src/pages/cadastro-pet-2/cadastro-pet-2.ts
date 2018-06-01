@@ -14,7 +14,6 @@ export class CadastroPet_2Page {
   public cores;
   public portes;
   public idades;
-  public racas;
   public especies;
   public generos;
 
