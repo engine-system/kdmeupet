@@ -23,10 +23,92 @@ export class UtilProvider {
   createMessage(msg: string) {
     this.toast.create({ message: msg, duration: 3000, position: 'bottom' }).present();
   }
-  
+
   getRacasGatos() {
     return [
-      { nome: 'Não sei' }
+      { nome: 'Não sei' },
+      { nome: 'Abissínio' },
+      { nome: 'Angorá turco' },
+      { nome: 'Asiático de Pelo Semi-Longo' },
+      { nome: 'Azul Russo' },
+      { nome: 'Balinês' },
+      { nome: 'Bambino' },
+      { nome: 'Bicolor Oriental' },
+      { nome: 'Bobtail americano' },
+      { nome: 'Bobtail japonês' },
+      { nome: 'Bombaim' },
+      { nome: 'Burmês' },
+      { nome: 'Burmila' },
+      { nome: 'California Spangled' },
+      { nome: 'Cingapura' },
+      { nome: 'Chartreux' },
+      { nome: 'Chausie' },
+      { nome: 'Colorpoint de pelo curto' },
+      { nome: 'Cornish Rex' },
+      { nome: 'Curl Americano' },
+      { nome: 'Devon Rex' },
+      { nome: 'Donskoy' },
+      { nome: 'Dragon Li' },
+      { nome: 'Egeu' },
+      { nome: 'Gato-de-Bengala' },
+      { nome: 'Gato do Chipre' },
+      { nome: 'Exótico' },
+      { nome: 'Gato asiático' },
+      { nome: 'Gato Siberiano' },
+      { nome: 'Havana marrom' },
+      { nome: 'Himalaio' },
+      { nome: 'Javanês' },
+      { nome: 'Korat' },
+      { nome: 'Khao Manee' },
+      { nome: 'Kurilian Bobtail' },
+      { nome: 'LaPerml' },
+      { nome: 'Levkoy ucraniano' },
+      { nome: 'Lykoi' },
+      { nome: 'Maine Coon' },
+      { nome: 'Manx' },
+      { nome: 'Manx de pelo longo' },
+      { nome: 'Mau Árabe' },
+      { nome: 'Mau egípcio' },
+      { nome: 'Minskin' },
+      { nome: 'Mist Australiano' },
+      { nome: 'Munchkin' },
+      { nome: 'Nebelung' },
+      { nome: 'Norueguês da Floresta' },
+      { nome: 'Ocicat' },
+      { nome: 'Ojos Azules' },
+      { nome: 'Oregon Rex' },
+      { nome: 'Pelo curto americano' },
+      { nome: 'Pelo curto brasileiro' },
+      { nome: 'Pelo curto Europeu' },
+      { nome: 'Pelo curto inglês' },
+      { nome: 'Pelo longo Inglês' },
+      { nome: 'Pelo curto Oriental' },
+      { nome: 'Pelo longo Oriental' },
+      { nome: 'Persa' },
+      { nome: 'Peterbald' },
+      { nome: 'Pixie-bob' },
+      { nome: 'Raas' },
+      { nome: 'Ragamuffin' },
+      { nome: 'Ragdoll' },
+      { nome: 'Rex Alemão' },
+      { nome: 'Sagrado da Birmânia' },
+      { nome: 'Savannah' },
+      { nome: 'Scottish Fold' },
+      { nome: 'Selkirk Rex' },
+      { nome: 'Serengeti' },
+      { nome: 'Siamês' },
+      { nome: 'Singapura' },
+      { nome: 'Snowshoe' },
+      { nome: 'Sokoke' },
+      { nome: 'Somali' },
+      { nome: 'Sphynx' },
+      { nome: 'Suphalak' },
+      { nome: 'Thai' },
+      { nome: 'Tiffany-Chantilly' },
+      { nome: 'Tonquinês' },
+      { nome: 'Toyger' },
+      { nome: 'Van Turco' },
+      { nome: 'Wirehair Americano' },
     ]
   }
 
@@ -219,7 +301,7 @@ export class UtilProvider {
       { nome: 'Yorkshire Terrier' }
     ];
   }
-  
+
   getEnderecoLatLong(endereco) {
     let url = this.config.ENDERECO_MAPS + '?latlng=' + endereco.lat + ',' + endereco.lgt + '&key=' + this.config.APIMAPSKEY
     console.log(url);

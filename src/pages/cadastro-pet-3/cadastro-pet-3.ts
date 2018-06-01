@@ -27,7 +27,13 @@ export class CadastroPet_3Page {
   }
 
   initializeItems() {
-    this.util.getRacasCachorro();
+    if(this.pet.especie=="Cachorro"){
+      this.racas = this.util.getRacasCachorro();
+    }
+    if(this.pet.especie=="Gato"){
+      this.racas = this.util.getRacasGatos();
+    }
+    
   }
 
   getItems(ev: any) {

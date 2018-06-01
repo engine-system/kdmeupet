@@ -4,6 +4,7 @@ import { CadastroPet_3Page } from '../cadastro-pet-3/cadastro-pet-3';
 import { CadastroPetPage } from '../cadastro-pet/cadastro-pet';
 import { PetProvider } from '../../providers/pet/pet-provider';
 import { Pet } from '../../model/pet';
+import { UtilProvider } from '../../providers/util/util';
 
 @IonicPage()
 @Component({
@@ -23,7 +24,8 @@ export class CadastroPet_2Page {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public petProvider: PetProvider) {
+    public petProvider: PetProvider,
+  public util:UtilProvider) {
 
     this.generos = [
       {
@@ -33,7 +35,12 @@ export class CadastroPet_2Page {
       {
         codigo: '02',
         nome: 'Feminino'
+      },
+      {
+        codigo: '03',
+        nome: 'Não sei'
       }
+      
     ]
     this.especies = [
       {
@@ -110,10 +117,14 @@ export class CadastroPet_2Page {
   }
 
   public proximo() {
-    this.navCtrl.push(CadastroPet_3Page, {
-      'acao': this.acao,
-      'pet': this.pet,
-    });
+    if(this.pet.especie!=""){
+      this.navCtrl.push(CadastroPet_3Page, {
+        'acao': this.acao,
+        'pet': this.pet,
+      });
+    }else{
+      this.util.createMessage("Coloque a especie do animal (gato/cachorro)")
+    }
   }
 
   public anterior() {
