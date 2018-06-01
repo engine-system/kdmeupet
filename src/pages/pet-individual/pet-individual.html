@@ -6,51 +6,72 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>pet-individual</ion-title>
+    <ion-navbar color="secondary">
+        <ion-title>Informações do Pet</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="colored-background">
-    <ion-item class="transparencia" no-lines>
+<ion-content>
         <ion-card>
+            
+            <img src={{pet.foto}} />
             <ion-card-content>
-                <img src={{pet.foto}} />
-                <div text-center class="titulo-categoria linhas" style="white-space: normal">
-                    <span>{{pet.raca.nome}}</span>
+                <div class="grid linha-decoracao">
+                    <div class="coluna" id="alinhamento-individual">
+                        Nome: 
+                        <a class="texto-individual">                            
+                        {{pet.nome}}
+                        </a>
+                    </div>
+                    <div class="coluna">
+                            Raça:
+                        <a class="texto-individual">
+                        {{pet.raca.nome}}
+                        </a>
+                    </div>
+                </div>          
+                <div class="grid linha-decoracao">
+                        <div class="coluna" id="alinhamento-individual">
+                            Idade:                             
+                            <a class="texto-individual">
+                            {{pet.idade.nome}}
+                            </a>
+                        </div>
+                        <div class="coluna">
+                            Gênero:
+                            <a class="texto-individual">
+                             {{pet.genero.nome}}
+                            </a>
+                        </div>
                 </div>
-                <div class="ficha">
-                    <div class="linha" style="white-space: normal">
-                        Nome: {{pet.nome}}
-                    </div>
-                    <div class="linha duplo" style="white-space: normal">
-                        <div>
-                            Cor Primária: {{pet.cor1.nome}}
-                        </div>
-                        <div>
-                            Cor Secundária: {{pet.cor2.nome}}
-                        </div>
-                    </div>
-                    <div class="linha duplo">
-                        <div class="linha" style="white-space: normal">
-                            Idade: {{pet.idade.nome}}
-                        </div>
-                        <div class="linha" style="white-space: normal">
-                            Genero: {{pet.genero.nome}}
-                        </div>
-                    </div>
-                    <div class="linha" style="white-space: normal">
-                        Ultimo local: {{pet.nomeLocal}}
-                    </div>
+                <div class="grid1 linha-decoracao">
+                    <div class="coluna" id="alinhamento-individual2">
+                        Cor do animal:                        
+                        <a class="texto-individual">
+                            {{pet.cor1.nome}}
+                        </a>/
+                        
+                        <a class="texto-individual">
+                            {{pet.cor2.nome}}
+                        </a>
+                    </div>                    
+                </div>                    
+                <div class="grid1">
+                    <div class="coluna" id="alinhamento-individual2">                      
+                            Ultimo local: 
+                        <a class="texto-individual">
+                         {{pet.nomeLocal}}
+                         </a>
+                    </div>                    
                 </div>
+                
+            <button ion-button full (click)="mapaUltimoLocal()">Mapa do ultimo local</button>
             </ion-card-content>
 
         </ion-card>
-    </ion-item>
-    <button ion-button full (click)="mapaUltimoLocal()">Mapa do ultimo local</button>
-    <ion-item class="transparencia" no-lines *ngFor="let mensagem of mensagens">
+        <ion-item class="transparencia" no-lines *ngFor="let mensagem of mensagens">
         <ion-card>
             {{mensagem.texto}}
         </ion-card>
