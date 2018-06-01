@@ -17,8 +17,9 @@ import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 })
 export class PetIndividualPage {
   public pet:any;
-  public mensagens:any;
+  public mensagens:any=new Array();
   public mensagem:string;
+  public contadorMensagens:number;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -28,14 +29,16 @@ export class PetIndividualPage {
   }
 
   ionViewDidLoad() {
-    //this.carregaMensagens();
-    console.log(this.mensagens);
+    this.carregaMensagens();
     console.log('ionViewDidLoad PetIndividualPage');
   }
   carregaMensagens(){
-    for(let i;i>=this.pet.mensagens.length();i++){
-      console.log(i);
-    }
+    
+    this.petProvider.getAllMensagens(this.pet.key).then(data => {
+      this.mensagens = data;
+      console.log(this.mensagens);
+      this.contadorMensagens = this.mensagens.length;
+    })
   }
   mapaUltimoLocal(){
     this.navCtrl.push(CadastroPet_4Page,{
@@ -47,6 +50,7 @@ export class PetIndividualPage {
 
   saveMensagem(){
     this.petProvider.mensagemPerdido(this.pet.key,this.mensagem);
+    this.carregaMensagens();
   }
 
 }

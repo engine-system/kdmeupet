@@ -28,6 +28,21 @@ export class PetProvider {
     })
     return pro;
   }
+  getAllMensagens(key){
+    return new Promise((resolve, reject) => {
+      let ref = this.db.database.ref(this.PATHMENSAGEM);
+      
+    ref.orderByChild("key").equalTo(key).on("value", function(snapshot) {
+      let mensagens:any[]=new Array();
+snapshot.forEach(element => {
+  mensagens.push(element.val())
+});
+
+      resolve(mensagens);
+    });
+      
+    })
+  }
 
   getPerdido(key: string) {
     return this.db.object(this.PATHPERDIDOS + key)
@@ -182,24 +197,12 @@ export class PetProvider {
   }
 
   mensagemPerdido(key:string,mensagem:string){
-    let refPet = this.db.database.ref(this.PATHPERDIDOS+key).child('mensagens');
+    let refPet = this.db.database.ref(this.PATHMENSAGEM);
     refPet.push({
-      mensagem: mensagem,
+      key:key,
+      mensagem: mensagem
     })
   }
-/*
-  getAllMensagensPerdidos(key): Promise<any> {
-    let pro = new Promise((resolv, reject) => {
-      this.db.database.ref(this.PATHPERDIDOS+key).child('mensagens').subscribe(data => {
-        resolv(data);
-      },
-        err => {
-          console.log(err);
-          reject(err);
-        })
-    })
-    return pro;
-  }*/
 }
 
 

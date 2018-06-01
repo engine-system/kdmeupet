@@ -304,7 +304,6 @@ export class UtilProvider {
 
   getEnderecoLatLong(endereco) {
     let url = this.config.ENDERECO_MAPS + '?latlng=' + endereco.lat + ',' + endereco.lgt + '&key=' + this.config.APIMAPSKEY
-    console.log(url);
     return new Promise((resolve, reject) => {
       this.http.get(url)
         .subscribe((result: any) => {

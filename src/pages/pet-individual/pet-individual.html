@@ -14,69 +14,70 @@
 
 
 <ion-content>
-        <ion-card>
-            
-            <img src={{pet.foto}} />
-            <ion-card-content>
-                <div class="grid linha-decoracao">
-                    <div class="coluna" id="alinhamento-individual">
-                        Nome: 
-                        <a class="texto-individual">                            
+    <ion-card>
+
+        <img src={{pet.foto}} />
+        <ion-card-content>
+            <div class="grid linha-decoracao">
+                <div class="coluna" id="alinhamento-individual">
+                    Nome:
+                    <a class="texto-individual">                            
                         {{pet.nome}}
                         </a>
-                    </div>
-                    <div class="coluna">
-                            Raça:
-                        <a class="texto-individual">
+                </div>
+                <div class="coluna">
+                    Raça:
+                    <a class="texto-individual">
                         {{pet.raca.nome}}
                         </a>
-                    </div>
-                </div>          
-                <div class="grid linha-decoracao">
-                        <div class="coluna" id="alinhamento-individual">
-                            Idade:                             
-                            <a class="texto-individual">
+                </div>
+            </div>
+            <div class="grid linha-decoracao">
+                <div class="coluna" id="alinhamento-individual">
+                    Idade:
+                    <a class="texto-individual">
                             {{pet.idade.nome}}
                             </a>
-                        </div>
-                        <div class="coluna">
-                            Gênero:
-                            <a class="texto-individual">
+                </div>
+                <div class="coluna">
+                    Gênero:
+                    <a class="texto-individual">
                              {{pet.genero.nome}}
                             </a>
-                        </div>
                 </div>
-                <div class="grid1 linha-decoracao">
-                    <div class="coluna" id="alinhamento-individual2">
-                        Cor do animal:                        
-                        <a class="texto-individual">
+            </div>
+            <div class="grid1 linha-decoracao">
+                <div class="coluna" id="alinhamento-individual2">
+                    Cor do animal:
+                    <a class="texto-individual">
                             {{pet.cor1.nome}}
                         </a>/
-                        
-                        <a class="texto-individual">
+
+                    <a class="texto-individual">
                             {{pet.cor2.nome}}
                         </a>
-                    </div>                    
-                </div>                    
-                <div class="grid1">
-                    <div class="coluna" id="alinhamento-individual2">                      
-                            Ultimo local: 
-                        <a class="texto-individual">
+                </div>
+            </div>
+            <div class="grid1">
+                <div class="coluna" id="alinhamento-individual2">
+                    Ultimo local:
+                    <a class="texto-individual">
                          {{pet.nomeLocal}}
                          </a>
-                    </div>                    
                 </div>
-                
-            <button ion-button full (click)="mapaUltimoLocal()">Mapa do ultimo local</button>
-            </ion-card-content>
+            </div>
 
-            <ion-item class="pet-margin" >
-                <ion-label color="primary" floating>Mensagem</ion-label>
-                <ion-input [(ngModel)]="mensagem"></ion-input>
-            </ion-item>
-            <button ion-button full (click)="saveMensagem()">Enviar Mensagem</button>
-        </ion-card>
-        <ion-item class="transparencia" no-lines *ngFor="let mensagem of mensagens">
+            <button ion-button full (click)="mapaUltimoLocal()">Mapa do ultimo local</button>
+        </ion-card-content>
+
+        <ion-item class="pet-margin">
+            <ion-label color="primary" floating>Mensagem</ion-label>
+            <ion-input [(ngModel)]="mensagem"></ion-input>
+        </ion-item>
+        <button ion-button full (click)="saveMensagem()">Enviar Mensagem</button>
+    </ion-card>
+    {{contadorMensagens}}
+    <ion-item class="transparencia" no-lines *ngFor="let mensagem of mensagens">
         <ion-card>
             {{mensagem.mensagem}}
         </ion-card>
