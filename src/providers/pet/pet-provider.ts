@@ -32,7 +32,16 @@ export class PetProvider {
   getPerdido(key: string) {
     return this.db.object(this.PATHPERDIDOS + key)
   }
-
+  colocaKeyPerdido(key:any){
+    return new Promise((resolve, reject) => {
+      this.db.list(this.PATHPERDIDOS)
+        .update(key, {
+          key:key
+        })
+        .then(() => resolve())
+        .catch((e) => reject(e));
+    })
+  }
   updatePerdido(pet: any) {
     return new Promise((resolve, reject) => {
       this.db.list(this.PATHPERDIDOS)
@@ -47,7 +56,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
-          descricao:pet.descricao,
+          descricao: pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then(() => resolve())
@@ -70,10 +79,19 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
-          descricao:pet.descricao,
+          descricao: pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
-        .then(() => resolve());
+        .then((data) => {
+          let key = data.key;
+          this.colocaKeyPerdido(key)
+            .then(() => {
+              console.log("key inserida");
+            })
+            .catch((e) => {
+            });
+          resolve()
+        });
     })
 
   }
@@ -108,7 +126,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
-          descricao:pet.descricao,
+          descricao: pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then(() => resolve())
@@ -130,7 +148,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
-          descricao:pet.descricao,
+          descricao: pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then((data) => {
