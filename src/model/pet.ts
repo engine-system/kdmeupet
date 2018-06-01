@@ -7,7 +7,7 @@ export class Pet {
     public cor2: any="";
     public porte: any="";
     public idade: any="";
-    public descrição: any="";
+    public descricao: any="";
     public raca: any="";
     public ultimoLocalVisto: any="";
     public nomeLocal:any;
@@ -21,7 +21,7 @@ export class Pet {
         this.cor2 = "";
         this.porte = "";
         this.idade = "";
-        this.descrição = "";
+        this.descricao = "";
         this.raca = "";
         this.ultimoLocalVisto = "";
         this.nomeLocal = "";

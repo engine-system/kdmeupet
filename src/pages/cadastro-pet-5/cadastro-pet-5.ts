@@ -26,6 +26,7 @@ export class CadastroPet_5Page {
   ionViewDidLoad() {
     this.pet = this.navParams.get('pet');
     this.acao = this.navParams.get('acao');
+    console.log(this.pet);
     console.log('ionViewDidLoad CadastroPet_5Page');
   }
 

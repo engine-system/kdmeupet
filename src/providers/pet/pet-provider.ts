@@ -47,6 +47,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
+          descricao:pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then(() => resolve())
@@ -69,6 +70,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
+          descricao:pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then(() => resolve());
@@ -106,6 +108,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
+          descricao:pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then(() => resolve())
@@ -127,6 +130,7 @@ export class PetProvider {
           porte: pet.porte,
           idade: pet.idade,
           raca: pet.raca,
+          descricao:pet.descricao,
           ultimoLocalVisto: pet.ultimoLocalVisto
         })
         .then((data) => {
