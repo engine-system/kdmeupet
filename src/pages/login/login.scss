@@ -3,7 +3,23 @@ page-login {
         background: #517C8C!important;
       
     }
-    
+    ion-row {
+        align-items: center;
+        text-align: center;
+      }
+ 
+      ion-item {
+          border-radius: 10px !important;
+          padding-left: 10px !important;
+          margin-bottom: 10px !important;
+          background-color: #f6f6f6;
+          opacity: 0.8;
+          font-size: 0.9em;
+      }
+ 
+      ion-list {
+          margin: 0;
+      }
     .logo{
         width: 50%;
         height: 50%;
@@ -14,6 +30,12 @@ page-login {
         font-size: 2em;
         font-weight: bold;
         color:#fff;
+    }
+    .login-button {
+        border-radius: 10px;
+        font-size: 0.9em;
+        background-color: #40B8A8;
+        width: 90%;
     }
     
  

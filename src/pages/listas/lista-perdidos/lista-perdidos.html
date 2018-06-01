@@ -14,14 +14,14 @@
 
 <ion-content padding>                          
     <div *ngFor="let pet of pets">                     
-        <ion-card (click)="irPet(pet)">         
+        <ion-card (click)="irPet(pet)" class="borda">         
             <img src={{pet.foto}} />
             
             <div class="texto">Ultimo local: {{pet.nomeLocal}}</div>
             <div class="card-subtitle">
             </div>
             <div class="card-title">
-            <button ion-button medium >
+            <button ion-button medium class="borda">
                 <div>Ver informações do pet</div>
             </button>             
             </div>                          

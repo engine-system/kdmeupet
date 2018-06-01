@@ -6,25 +6,40 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>perfil</ion-title>
+    <ion-navbar color="secondary">
+        <ion-title>Meu Perfil</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-item>
-        <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input [(ngModel)]="user.nome"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label color="primary" floating>Telefone</ion-label>
-        <ion-input [(ngModel)]="user.telefone"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label color="primary" floating>Endereço</ion-label>
-        <ion-input [(ngModel)]="user.endereco"></ion-input>
-    </ion-item>
-    <button ion-button full (click)="save()">salvar</button>
+<ion-content center padding>
+        <ion-row justify-content-center align-items-center>
+                <p class="texto-perfil"><strong>Meu perfil</strong><br>Preencha seus dados abaixo</p>
+        </ion-row>
+        <ion-row>
+                <ion-col>
+                        <ion-item>
+                                <ion-label>Nome</ion-label>
+                                <ion-input [(ngModel)]="user.nome"></ion-input>    
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Telefone</ion-label>
+                                <ion-input [(ngModel)]="user.telefone"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Endereço</ion-label>
+                                <ion-input [(ngModel)]="user.endereco"></ion-input>
+                            </ion-item>
+                </ion-col>
+              </ion-row>
+           
+              <ion-row>
+                <ion-col>
+                    
+                <button ion-button (click)="save()" class="login-button">salvar</button>
+                </ion-col>
+              </ion-row>
+        
+    
 </ion-content>

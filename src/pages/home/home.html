@@ -8,7 +8,7 @@
     <ion-grid>
         <ion-row>
             <ion-col col-6>
-                <ion-card (click)="perdiMeuPet()">
+                <ion-card (click)="perdiMeuPet()" class="borda">
                     <img src="assets/imgs/perdi-meu-pet.jpg" />
                     <div class="title-pet">Perdi meu pet!</div>
 
@@ -16,26 +16,26 @@
                 </ion-card>
             </ion-col>
             <ion-col col-6>
-                <ion-card (click)="acheiUmPet()">
+                <ion-card (click)="acheiUmPet()" class="borda">
                     <img src="assets/imgs/achei-meu-pet.jpg" />
                     <div class="title-pet">Achei um pet!</div>
                     <div class="subtitle-pet">Ajude seu amiguinho a voltar para casa</div>
                 </ion-card>
             </ion-col>
             <ion-col col-12 class="alinhamento">
-                <ion-card (click)="nosAjude()">
+                <ion-card (click)="nosAjude()" class="borda">
                     <img src="assets/imgs/ajuda.jpg" />
                     <div class="title-analise"> </div>
                     <div class="dado1">Quer ajudar o KD Meu Pet?</div>
                     <div class="dado2">Veja um vídeo!</div>
                 </ion-card>
-                <ion-card (click)="share()">
+                <ion-card (click)="share()" class="borda">
                     <img src="assets/imgs/dados-app2.jpg" />
                     <div class="title-analise"> </div>
                     <div class="dado1">{{cadastrados}} Pets Achados na rua</div>
                     <div class="dado2">{{perdidos}} Pets Perdidos</div>
                 </ion-card>
-                <ion-card (click)="meuPerfil()">
+                <ion-card (click)="meuPerfil()" class="borda">
                     <img src="assets/imgs/meu-registro2.jpg" />
                     <div class="title-registro">Meus Dados</div>
                 </ion-card>
