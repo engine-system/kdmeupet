@@ -12,50 +12,19 @@
 
 </ion-header>
 
-<ion-content padding>
-                          
-            <div *ngFor="let pet of pets">                           
-                <ion-card (click)="irPet(pet)">         
-                    <img src={{pet.foto}} />
-                    <div class="card-subtitle">
-                        <a>Ultimo local: {{pet.nomeLocal}}</a>
-                    </div>
-                    <div class="card-title">
-                    <button ion-button medium >
-                        <div>Ver informações do pet</div>
-                    </button>             
-                    </div>                          
-                </ion-card>
+<ion-content padding>                          
+    <div *ngFor="let pet of pets">                     
+        <ion-card (click)="irPet(pet)">         
+            <img src={{pet.foto}} />
+            
+            <div class="texto">Ultimo local: {{pet.nomeLocal}}</div>
+            <div class="card-subtitle">
             </div>
- 
-
+            <div class="card-title">
+            <button ion-button medium >
+                <div>Ver informações do pet</div>
+            </button>             
+            </div>                          
+        </ion-card>
+    </div> 
 </ion-content>
-           <!--
-                <ion-card-content>
-                
-                <div text-center class="titulo-categoria linhas" style="white-space: normal">
-                    <span>{{pet.raca.nome}}</span>
-                </div>
-                <div class="ficha">
-                    <div class="linha" style="white-space: normal">
-                        Nome: {{pet.nome}}
-                    </div>
-                    <div class="linha duplo" style="white-space: normal">
-                        <div>
-                            Cor do animal: {{pet.cor1.nome}} / {{pet.cor2.nome}}
-                        </div>                        
-                    </div>
-                    <div class="linha duplo">
-                        <div class="linha" style="white-space: normal">
-                            Idade: {{pet.idade.nome}}
-                        </div>
-                        <div class="linha" style="white-space: normal">
-                            Genero: {{pet.genero.nome}}
-                        </div>
-                    </div>
-                    <div class="linha" style="white-space: normal">
-                        Ultimo local: {{pet.nomeLocal}}
-                    </div>
-                </div>
-            </ion-card-content>
-        -->
