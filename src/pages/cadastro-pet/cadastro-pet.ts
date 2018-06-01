@@ -73,7 +73,7 @@ export class CadastroPetPage {
   }
 
   public proximo() {
-    if(this.pet.foto){
+    if(!this.pet.foto){
       this.navCtrl.push(CadastroPet_2Page, {
         'acao':this.acao,
         'pet': this.pet

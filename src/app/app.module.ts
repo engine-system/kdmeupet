@@ -42,6 +42,8 @@ import { NosajudePage } from '../pages/nosajude/nosajude';
 import { VideoPage } from '../pages/video/video';
 import { DoacaoPage } from '../pages/doacao/doacao';
 import { RecompensaPage } from '../pages/recompensa/recompensa';
+import { FcmProvider } from '../providers/fcm/fcm';
+import { CadastroFinalizadoPage } from '../pages/cadastro-finalizado/cadastro-finalizado';
 
 /*PRODUÇÃO */
 const firebaseConfig={
@@ -77,7 +79,8 @@ const firebaseConfig={
     NosajudePage,
     VideoPage,
     DoacaoPage,
-    RecompensaPage
+    RecompensaPage,
+    CadastroFinalizadoPage
   ],
   imports: [
     BrowserModule,
@@ -113,7 +116,8 @@ const firebaseConfig={
     NosajudePage,
     VideoPage,
     DoacaoPage,
-    RecompensaPage
+    RecompensaPage,
+    CadastroFinalizadoPage
   ],
   providers: [
     StatusBar,
@@ -131,7 +135,8 @@ const firebaseConfig={
     User,
     AuthService,
     LaunchNavigator,
-    PerfilProvider
+    PerfilProvider,
+    FcmProvider
   ]
 })
 export class AppModule {}
