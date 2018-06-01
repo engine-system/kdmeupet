@@ -58,6 +58,7 @@ export class CadastroPet_4Page {
     this.util.getEnderecoLatLong(endereco)
       .then((data: any) => {
         this.endereco = data.results[0].formatted_address;
+        this.pet.nomeLocal = this.endereco;
       })
       .catch(error => {
         console.log(error);

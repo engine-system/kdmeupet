@@ -27,6 +27,9 @@ export class CadastroPet_3Page {
   }
 
   initializeItems() {
+
+    console.log(this.pet)
+
     if(this.pet.especie=="Cachorro"){
       this.racas = this.util.getRacasCachorro();
     }

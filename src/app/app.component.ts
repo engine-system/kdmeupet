@@ -9,6 +9,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { User } from '../providers/auth/user';
+import { CadastroFinalizadoPage } from '../pages/cadastro-finalizado/cadastro-finalizado';
 
 @Component({
   templateUrl: 'app.html'

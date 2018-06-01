@@ -10,6 +10,7 @@ export class Pet {
     public descrição: any="";
     public raca: any="";
     public ultimoLocalVisto: any="";
+    public nomeLocal:any;
 
     zerar() {
         this.nome = "";
@@ -23,5 +24,6 @@ export class Pet {
         this.descrição = "";
         this.raca = "";
         this.ultimoLocalVisto = "";
+        this.nomeLocal = "";
     }
 }

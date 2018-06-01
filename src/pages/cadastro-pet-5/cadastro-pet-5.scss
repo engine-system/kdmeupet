@@ -1,5 +1,28 @@
 page-cadastro-pet-5 {
-    .borda{
-        border-radius:10px;
+    .borda {
+        border-radius: 10px;
+    }
+    .grid {
+        display: grid;
+        grid-template: "coluna coluna";
+    }
+    .grid1 {
+        display: grid;
+        grid-template: "coluna";
+        justify-content: flex-start;
+    }
+    .coluna {
+        grid-area: "coluna";
+    }
+    .linha-decoracao {
+        border-bottom: 1px solid #40B8A8;
+    }
+    #alinhamento-individual2 {
+        padding: 5px;
+    }
+    .texto-individual {
+        font-weight: bold;
+        font-size: 1em;
+        color: #000;
     }
 }

@@ -1,3 +1,21 @@
-page-cadastro-finalizado {
-
-}
+    page-cadastro-finalizado {
+        ion-card {
+            position: relative;
+            text-align: center;
+            top: 30%;
+        }
+        .cadastro-finalizado2 {
+            font-size: 1.3em;
+            padding-top: 30px;
+            color: #40B8A8;
+        }
+        .cadastro-finalizado {
+            font-size: 0.9em;
+            padding: 10px;
+            padding-bottom: 30px;
+            color: #40B8A8;
+        }
+        .borda {
+            border-radius: 10px;
+        }
+    }

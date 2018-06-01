@@ -5,6 +5,7 @@ import { TabsPage } from '../tabs/tabs';
 import { UtilProvider } from '../../providers/util/util';
 import { PetProvider } from '../../providers/pet/pet-provider';
 import { Pet } from '../../model/pet';
+import { CadastroFinalizadoPage } from '../cadastro-finalizado/cadastro-finalizado';
 
 @IonicPage()
 @Component({
@@ -25,7 +26,6 @@ export class CadastroPet_5Page {
   ionViewDidLoad() {
     this.pet = this.navParams.get('pet');
     this.acao = this.navParams.get('acao');
-    console.log(this.pet);
     console.log('ionViewDidLoad CadastroPet_5Page');
   }
 
@@ -37,8 +37,7 @@ export class CadastroPet_5Page {
     if(this.acao=='achado'){
       this.petProvider.saveAchado(this.pet)
       .then(() => {
-        this.util.createMessage('criado com sucesso');
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.push(CadastroFinalizadoPage);
       })
       .catch((e) => {
         console.log(e);
@@ -47,8 +46,7 @@ export class CadastroPet_5Page {
     }else{
       this.petProvider.savePerdido(this.pet)
       .then(() => {
-        this.util.createMessage('criado com sucesso');
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.push(CadastroFinalizadoPage);
       })
       .catch((e) => {
         console.log(e);
