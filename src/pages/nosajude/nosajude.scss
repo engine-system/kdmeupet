@@ -1,3 +1,65 @@
 page-nosajude {
+       
+    
+    ion-content{
+        background-image:url("../assets/imgs/pattern-back.jpg") !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+  
+        ion-card {
+            position: relative;
+            text-align: center;
+        }
+        .title-analise{
+            position: absolute;
+            top:15%;
+            font-size: 1.3em;
+            color: #fff;
+            margin-left: 29%;
+        }
+    
+        .dado1 {
+            position: absolute;
+            top:20%;
+            font-size: 1.1em;
+            color: #fff;
+            margin-left: 29%;
+        }
+        .dado2 {
+            position: absolute;
+            top:50%;
+            font-size: 1.1em;
+            color: #fff;        
+            margin-left: 29%;
+        }
+       
+        .title-registro {
+            position: absolute;
+            top: 30%;
+            font-size: 1.3em;
+            width: 100%;
+            color: #fff;          
+            margin-left: -5%;
+        }
+        .title-pet {
+            position: absolute;
+            top: 35%;
+            font-size: 1.3em;
+            width: 100%;
+            color: #fff;
+        }
+        .subtitle-pet {
+            font-size: 0.9em;
+            position: absolute;
+            top: 50%;
+            padding: 10px;
+            width: 100%;
+            color: #fff;
+        }
+        .alinhamento
+        {
+            margin-top: -5%;
+        }
+    }
 
-}

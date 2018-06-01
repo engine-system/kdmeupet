@@ -6,29 +6,28 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>nosajude</ion-title>
+    <ion-navbar color="secondary">
+        <ion-title>Nos Ajude</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-grid>
+    <ion-grid style="margin-top:15%;">
         <ion-row>
             <ion-col col-6>
                 <ion-card (click)="doacao()">
-                    <img src="assets/imgs/perdi-meu-pet.jpg" />
-                    <div class="title-pet">Perdi meu pet!</div>
-
-                    <div class="subtitle-pet">Cadastre seu amiguinho para sabermos mais sobre ele</div>
+                    <img src="assets/imgs/cartao.jpg" />
+                    <div class="title-pet">Faça uma doação!</div>
+                    <div class="subtitle-pet">Doe de coração para ajudar mais pets</div>
                 </ion-card>
             </ion-col>
             <ion-col col-6>
                 <ion-card (click)="video()">
-                    <img src="assets/imgs/achei-meu-pet.jpg" />
-                    <div class="title-pet">Achei um pet!</div>
-                    <div class="subtitle-pet">Ajude seu amiguinho a voltar para casa</div>
+                    <img src="assets/imgs/video.jpg" />
+                    <div class="title-pet">Assista um vídeo!</div>
+                    <div class="subtitle-pet">Assista um vídeo para ajudar mais pets</div>
                 </ion-card>
             </ion-col>
         </ion-row>
