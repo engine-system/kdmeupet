@@ -8,14 +8,15 @@ page-pet-individual {
     .grid1{
         display: grid;
         grid-template: "coluna";
-        justify-content: flex-start;
 
     }
     .coluna{
         grid-area: "coluna";
         
     }
-   
+    .borda{        
+        border-radius: 10px;
+    }
     
     .linha-decoracao{
         border-bottom: 1px solid #40B8A8; 
@@ -27,6 +28,12 @@ page-pet-individual {
         font-weight: bold;
         font-size: 1em;
         color:#000;
+    }
+    ion-item {
+        border-radius: 10px !important;
+        background-color: #f6f6f6;
+        opacity: 0.8;
+        font-size: 0.9em;
     }
 
 }
