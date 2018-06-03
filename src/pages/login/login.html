@@ -7,26 +7,26 @@
             <h1 class="titulo-login">KD Meu Pet</h1>
         </ion-row><br>
         <ion-row justify-content-center align-items-center>
-            
-                    <form #form="ngForm">
-                            <ion-item>
-                                <ion-label color="primary">E-mail</ion-label>
-                                <ion-input type="text" name="email" [(ngModel)]="usuario.email" #email="ngModel" required></ion-input>
-                            </ion-item>
-                            <ion-item>
-                                <ion-label color="primary">Senha</ion-label>
-                                <ion-input type="password" name="password" [(ngModel)]="usuario.password" #password="ngModel" required></ion-input>
-                            </ion-item>
-                    </form>
-                <ion-grid>
-                    <ion-row>
-                        <ion-col col-12>
-                            <button ion-button (click)="logar()" class="login-button">Entrar</button>
-                        
-                            <button ion-button (click)="cadastrar()" class="login-button">Cadastrar</button>
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
+
+            <form #form="ngForm">
+                <ion-item>
+                    <ion-label color="primary">E-mail</ion-label>
+                    <ion-input type="text" name="email" [(ngModel)]="usuario.email" #email="ngModel" required></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="primary">Senha</ion-label>
+                    <ion-input type="password" name="password" [(ngModel)]="usuario.password" #password="ngModel" required></ion-input>
+                </ion-item>
+            </form>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-12>
+                        <button ion-button (click)="logar()" class="login-button" [disabled]="!form.form.valid">Entrar</button>
+
+                        <button ion-button (click)="cadastrar()" class="login-button">Cadastrar</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </ion-row>
     </ion-grid>
 </ion-content>

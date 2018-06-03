@@ -7,6 +7,7 @@ import { AuthService } from '../../providers/auth/auth-service';
 import { NgForm } from '@angular/forms';
 import { User } from '../../providers/auth/user';
 import { HomePage } from '../home/home';
+import { UtilProvider } from '../../providers/util/util';
 
 /**
  * Generated class for the LoginPage page.
@@ -26,6 +27,7 @@ export class LoginPage {
   
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
+    public util:UtilProvider,
     private configuracoes:ConfiguracoesProvider,
   private authService:AuthService) {
   }
@@ -40,7 +42,7 @@ export class LoginPage {
         this.navCtrl.setRoot(TabsPage);
       })
       .catch((error:any)=>{
-
+        this.util.createMessage("usuario ou senha não cadastrados");
       })
     }
   }
