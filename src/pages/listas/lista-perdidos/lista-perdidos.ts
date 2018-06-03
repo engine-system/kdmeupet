@@ -25,7 +25,6 @@ export class ListaPerdidosPage {
 
     this.petProvider.getAllPerdidos().then(data => {
       this.pets = data;
-      console.log(this.pets);
       this.pets.forEach(pet => {
         this.ultimoLocal(pet);
       });

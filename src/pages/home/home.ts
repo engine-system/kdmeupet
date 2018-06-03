@@ -35,8 +35,12 @@ export class HomePage {
     private perfilProvider: PerfilProvider,
     public util: UtilProvider) {
     this.contagem();
+    this.userProvider = new User();
     this.mensagens = 56;
     this.showBannerAd();
+  }
+
+  ionViewDidLoad() {
     this.getPerfil();
   }
 
@@ -44,6 +48,7 @@ export class HomePage {
 
     this.perfilProvider.getPerfil(this.userProvider.logado)
       .then(data => {
+        this.userProvider.nome = data['val']['nome'];
         this.podeCadastrar = true;
       })
   }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PetProvider } from '../../providers/pet/pet-provider';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
+import { User } from '../../providers/auth/user';
+import { PerfilProvider } from '../../providers/perfil/perfil';
 
 /**
  * Generated class for the PetIndividualPage page.
@@ -17,6 +19,8 @@ import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 })
 export class PetIndividualPage {
   public pet:any;
+  public userProvider:User;
+  public perfilProvider:PerfilProvider;
   public mensagens:any=new Array();
   public mensagem:string;
   public contadorMensagens:number;
@@ -31,6 +35,15 @@ export class PetIndividualPage {
   ionViewDidLoad() {
     this.carregaMensagens();
     console.log('ionViewDidLoad PetIndividualPage');
+    this.getPerfil();
+  }
+  
+  public getPerfil() {
+
+    this.perfilProvider.getPerfil(this.userProvider.logado)
+      .then(data => {
+        this.userProvider.nome = data['val']['nome'];
+      })
   }
   carregaMensagens(){
     

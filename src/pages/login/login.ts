@@ -28,6 +28,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public util:UtilProvider,
+    public user:User,
     private configuracoes:ConfiguracoesProvider,
   private authService:AuthService) {
   }
@@ -38,7 +39,8 @@ export class LoginPage {
   public logar(){
     if(this.form.form.valid){
       this.authService.logar(this.usuario)
-      .then(()=>{
+      .then((data)=>{
+        this.user.logado = data.user.uid
         this.navCtrl.setRoot(TabsPage);
       })
       .catch((error:any)=>{

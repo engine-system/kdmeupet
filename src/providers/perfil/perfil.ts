@@ -8,8 +8,9 @@ export class PerfilProvider {
 
   private PATHPERFIL = 'perfis/';
   constructor(public http: HttpClient,
-    private userProvider:User,
+    public user:User,
     private db: AngularFireDatabase) {
+      this.user = new User();
     console.log('Hello PerfilProvider Provider');
   }
 
@@ -43,7 +44,7 @@ export class PerfilProvider {
       }else{
         this.db.list(this.PATHPERFIL)
         .push({
-          userKey: this.userProvider.logado,
+          userKey: this.user.logado,
           nome: user.nome
         })
         .then(() => resolve());

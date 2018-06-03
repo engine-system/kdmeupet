@@ -200,7 +200,8 @@ snapshot.forEach(element => {
     let refPet = this.db.database.ref(this.PATHMENSAGEM);
     refPet.push({
       key:key,
-      mensagem: mensagem
+      mensagem: mensagem,
+      usuario:this.userProvider
     })
   }
 }
