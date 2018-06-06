@@ -25,9 +25,11 @@ export class PerfilPage {
 
   public carregaPerfil(){
       this.perfilProvider.getPerfil().then(data=>{
-        this.user.nome = data['nome'];
+        if(data){
+          this.user.nome = data['nome'];
         this.user.endereco = data['endereco'];
         this.user.telefone = data['telefone'];
+        }
       })
   }
   ionViewDidLoad() {

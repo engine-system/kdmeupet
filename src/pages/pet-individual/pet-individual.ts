@@ -20,7 +20,6 @@ import { PerfilProvider } from '../../providers/perfil/perfil';
 export class PetIndividualPage {
   public pet:any;
   public userProvider:User;
-  public perfilProvider:PerfilProvider;
   public mensagens:any=new Array();
   public mensagem:string;
   public contadorMensagens:number;
@@ -35,16 +34,7 @@ export class PetIndividualPage {
   ionViewDidLoad() {
     this.carregaMensagens();
     console.log('ionViewDidLoad PetIndividualPage');
-    this.getPerfil();
-  }
-  
-  public getPerfil() {
-
-    this.perfilProvider.getPerfil(this.userProvider.logado)
-      .then(data => {
-        this.userProvider.nome = data['val']['nome'];
-      })
-  }
+    }
   carregaMensagens(){
     
     this.petProvider.getAllMensagens(this.pet.key).then(data => {

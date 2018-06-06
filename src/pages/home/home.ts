@@ -31,11 +31,9 @@ export class HomePage {
     public petProvider: PetProvider,
     private admobFree: AdMobFree,
     private socialSharing: SocialSharing,
-    private userProvider: User,
     private perfilProvider: PerfilProvider,
     public util: UtilProvider) {
     this.contagem();
-    this.userProvider = new User();
     this.mensagens = 56;
     this.showBannerAd();
   }
@@ -49,10 +47,10 @@ export class HomePage {
     this.perfilProvider.getPerfil().then(data=>{
       if(data){
         this.podeCadastrar = true;
+        this.perfilProvider.user.nome = data['nome'];
+      this.perfilProvider.user.endereco = data['endereco'];
+      this.perfilProvider.user.telefone = data['telefone'];
       }
-      this.userProvider.nome = data['nome'];
-      this.userProvider.endereco = data['endereco'];
-      this.userProvider.telefone = data['telefone;'];
     })
   }
 

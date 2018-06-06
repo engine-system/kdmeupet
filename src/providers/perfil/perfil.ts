@@ -44,11 +44,13 @@ export class PerfilProvider {
   }*/
   savePerfil(perfil: any) {
     const authObserver = this.afAuth.authState.subscribe(user => {
-      this.db.object(this.PATHPERFIL+`/${user.uid}`).set(perfil)
-      .then(()=>{
-        authObserver.unsubscribe();
-        console.log("deu certo")
-      })
+      if(user){
+        this.db.object(this.PATHPERFIL+`/${user.uid}`).set(perfil)
+        .then(()=>{
+          authObserver.unsubscribe();
+          console.log("deu certo")
+        })
+      }
     })
   }
 }
