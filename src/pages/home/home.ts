@@ -46,11 +46,14 @@ export class HomePage {
 
   public getPerfil() {
 
-    this.perfilProvider.getPerfil(this.userProvider.logado)
-      .then(data => {
-        this.userProvider.nome = data['val']['nome'];
+    this.perfilProvider.getPerfil().then(data=>{
+      if(data){
         this.podeCadastrar = true;
-      })
+      }
+      this.userProvider.nome = data['nome'];
+      this.userProvider.endereco = data['endereco'];
+      this.userProvider.telefone = data['telefone;'];
+    })
   }
 
   public contagem() {

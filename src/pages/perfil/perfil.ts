@@ -20,30 +20,22 @@ export class PerfilPage {
     public perfilProvider:PerfilProvider,
     public util:UtilProvider,
   public userProvider:User) {
-    this.perfilProvider.getPerfil(this.userProvider.logado)
-    .then(data=>{
-      if(data){
-        this.user.key = data['key'];
-      this.user.nome = data['val']['nome'];
-      this.user.endereco = data['val']['endereco'];
-      this.user.telefone = data['val']['telefone'];
-      }
-    })
+    this.carregaPerfil()
   }
 
+  public carregaPerfil(){
+      this.perfilProvider.getPerfil().then(data=>{
+        this.user.nome = data['nome'];
+        this.user.endereco = data['endereco'];
+        this.user.telefone = data['telefone'];
+      })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
   }
 
   save(){
     this.perfilProvider.savePerfil(this.user)
-    .then(data=>{
-      this.util.createMessage("Seu perfil foi atualizado com sucesso");
-      this.navCtrl.pop();
-    })
-    .catch(error=>{
-      console.log(error);
-    })
   }
 
 }

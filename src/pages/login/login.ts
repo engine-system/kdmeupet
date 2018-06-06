@@ -40,7 +40,7 @@ export class LoginPage {
     if(this.form.form.valid){
       this.authService.logar(this.usuario)
       .then((data)=>{
-        this.user.logado = data.user.uid
+        this.user.key = data.user.uid
         this.navCtrl.setRoot(TabsPage);
       })
       .catch((error:any)=>{

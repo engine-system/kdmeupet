@@ -71,7 +71,7 @@ snapshot.forEach(element => {
     return new Promise((resolve, reject) => {
       this.db.list(this.PATHPERDIDOS)
         .update(pet.key, {
-          responsavelCadastro: this.userProvider.logado,
+          responsavelCadastro: this.userProvider.key,
           nome: pet.nome,
           genero: pet.genero,
           foto: pet.foto,
@@ -93,7 +93,7 @@ snapshot.forEach(element => {
     return new Promise((resolve, reject) => {
       this.db.list(this.PATHPERDIDOS)
         .push({
-          responsavelCadastro: this.userProvider.logado,
+          responsavelCadastro: this.userProvider.key,
           nome: pet.nome,
           genero: pet.genero,
           foto: pet.foto,
@@ -140,7 +140,7 @@ snapshot.forEach(element => {
     return new Promise((resolve, reject) => {
       this.db.list(this.PATHACHADOS)
         .update(pet.key, {
-          responsavelCadastro: this.userProvider.logado,
+          responsavelCadastro: this.userProvider.key,
           nome: pet.nome,
           genero: pet.genero,
           foto: pet.foto,
@@ -162,7 +162,7 @@ snapshot.forEach(element => {
     return new Promise((resolve, reject) => {
       this.db.list(this.PATHACHADOS)
         .push({
-          responsavelCadastro: this.userProvider.logado,
+          responsavelCadastro: this.userProvider.key,
           nome: pet.nome,
           genero: pet.genero,
           foto: pet.foto,

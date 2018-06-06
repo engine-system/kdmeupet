@@ -4,8 +4,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class User{
-    logado:string="";
+    key:string="";
     email:string="";
     password:string="";
     nome:string="";
+    endereco:string="";
+    telefone:string="";
 }

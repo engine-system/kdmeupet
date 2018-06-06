@@ -26,7 +26,7 @@ export class MyApp {
 
     const authObserver = afAuth.authState.subscribe(user => {
       if (user) {
-        this.userProvider.logado = user.uid;
+        this.userProvider.key = user.uid;
         this.rootPage = TabsPage;
         
         authObserver.unsubscribe();
