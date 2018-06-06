@@ -20,6 +20,7 @@ export class PerfilProvider {
     return new Promise((resolve,reject)=>{
       const authObserver = this.afAuth.authState.subscribe(user => {
         let ref =  this.db.database.ref(this.PATHPERFIL+`/${user.uid}`);
+        console.log(ref);
         ref.on('value',function(snapshot){
           authObserver.unsubscribe();
           resolve(snapshot.val())

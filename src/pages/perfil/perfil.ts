@@ -25,10 +25,17 @@ export class PerfilPage {
 
   public carregaPerfil(){
       this.perfilProvider.getPerfil().then(data=>{
+        console.log("aqui");
+        console.log(data);
         if(data){
           this.user.nome = data['nome'];
         this.user.endereco = data['endereco'];
         this.user.telefone = data['telefone'];
+        }else{
+          this.user.nome="";
+          this.user.endereco="";
+          this.user.telefone="";
+          this.navCtrl.push(PerfilPage);
         }
       })
   }

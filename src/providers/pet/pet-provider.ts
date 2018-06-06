@@ -197,7 +197,7 @@ snapshot.forEach(element => {
     this.db.list(this.PATHACHADOS).remove(key);
   }
 
-  mensagemPerdido(key:string,mensagem:string){
+  mensagemPet(key:string,mensagem:string){
     console.log(this.perfilProvider.user);
     let refPet = this.db.database.ref(this.PATHMENSAGEM);
     refPet.push({

@@ -52,7 +52,7 @@ export class PetIndividualPage {
   }
 
   saveMensagem(){
-    this.petProvider.mensagemPerdido(this.pet.key,this.mensagem);
+    this.petProvider.mensagemPet(this.pet.key,this.mensagem);
     this.carregaMensagens();
   }
 
