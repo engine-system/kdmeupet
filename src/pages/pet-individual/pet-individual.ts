@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PetProvider } from '../../providers/pet/pet-provider';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { User } from '../../providers/auth/user';
-import { PerfilProvider } from '../../providers/perfil/perfil';
 
 /**
  * Generated class for the PetIndividualPage page.

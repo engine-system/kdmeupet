@@ -16,7 +16,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MensagensPage } from '../pages/mensagens/mensagens';
 import { LoginPage } from '../pages/login/login';
-import { PerfilPage } from '../pages/perfil/perfil';
 import { ResumoPage } from '../pages/resumo/resumo';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroPetPage } from '../pages/cadastro-pet/cadastro-pet';
@@ -35,7 +34,6 @@ import { User } from '../providers/auth/user';
 import { PetProvider } from '../providers/pet/pet-provider';
 import { ListaPerdidosPage } from '../pages/listas/lista-perdidos/lista-perdidos';
 import { ListaEncontradosPage } from '../pages/listas/lista-encontrados/lista-encontrados';
-import { PerfilProvider } from '../providers/perfil/perfil';
 import { PetIndividualPage } from '../pages/pet-individual/pet-individual';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { NosajudePage } from '../pages/nosajude/nosajude';
@@ -63,7 +61,6 @@ const firebaseConfig={
     ListaPerdidosPage,
     ListaEncontradosPage,
     LoginPage,
-    PerfilPage,
     ResumoPage,
     CadastroPage,
     CadastroPetPage,
@@ -100,7 +97,6 @@ const firebaseConfig={
     ListaPerdidosPage,
     ListaEncontradosPage,
     LoginPage,
-    PerfilPage,
     ResumoPage,
     CadastroPage,
     CadastroPetPage,
@@ -129,13 +125,11 @@ const firebaseConfig={
     Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PetProvider,
-    PerfilProvider,
     ConfiguracoesProvider,
     UtilProvider,
     User,
     AuthService,
     LaunchNavigator,
-    PerfilProvider,
     FcmProvider
   ]
 })

@@ -6,9 +6,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { CadastroPage } from '../cadastro/cadastro';
 import { PetProvider } from '../../providers/pet/pet-provider';
 import { Pet } from '../../model/pet';
-import { PerfilPage } from '../perfil/perfil';
 import { User } from '../../providers/auth/user';
-import { PerfilProvider } from '../../providers/perfil/perfil';
 import { UtilProvider } from '../../providers/util/util';
 import { NosajudePage } from '../nosajude/nosajude';
 
@@ -31,7 +29,6 @@ export class HomePage {
     public petProvider: PetProvider,
     private admobFree: AdMobFree,
     private socialSharing: SocialSharing,
-    private perfilProvider: PerfilProvider,
     public util: UtilProvider) {
     this.contagem();
     this.mensagens = 56;
@@ -39,20 +36,8 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.getPerfil();
   }
 
-  public getPerfil() {
-
-    this.perfilProvider.getPerfil().then(data=>{
-      if(data){
-        this.podeCadastrar = true;
-        this.perfilProvider.user.nome = data['nome'];
-      this.perfilProvider.user.endereco = data['endereco'];
-      this.perfilProvider.user.telefone = data['telefone'];
-      }
-    })
-  }
 
   public contagem() {
 
@@ -68,7 +53,6 @@ export class HomePage {
   })
 }
   public meuPerfil() {
-  this.navCtrl.push(PerfilPage);
 }
   public perdiMeuPet() {
   let pet: Pet = new Pet();
