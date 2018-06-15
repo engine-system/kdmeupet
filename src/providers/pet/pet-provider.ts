@@ -13,7 +13,8 @@ export class PetProvider {
 
   constructor(
     private db: AngularFireDatabase,
-    public http: HttpClient) { }
+    public http: HttpClient,
+    public user:User) { }
 
   getAllPerdidos(): Promise<any> {
     let pro = new Promise((resolv, reject) => {
@@ -195,7 +196,8 @@ snapshot.forEach(element => {
     let refPet = this.db.database.ref(this.PATHMENSAGEM);
     refPet.push({
       key:key,
-      mensagem: mensagem
+      mensagem: mensagem,
+      usuario:this.user.key
     })
   }
 }

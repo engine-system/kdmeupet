@@ -4,14 +4,6 @@ import { AdMobFreeRewardVideoConfig, AdMobFree } from '@ionic-native/admob-free'
 import { UtilProvider } from '../../providers/util/util';
 import { RecompensaPage } from '../recompensa/recompensa';
 
-/**
- * Generated class for the VideoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-video',
   templateUrl: 'video.html',

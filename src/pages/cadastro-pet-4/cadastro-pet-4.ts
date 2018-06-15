@@ -9,7 +9,6 @@ import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-na
 
 
 declare var google: any;
-@IonicPage()
 @Component({
   selector: 'page-cadastro-pet-4',
   templateUrl: 'cadastro-pet-4.html',

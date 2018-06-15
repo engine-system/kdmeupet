@@ -9,14 +9,6 @@ import { User } from '../../providers/auth/user';
 import { HomePage } from '../home/home';
 import { UtilProvider } from '../../providers/util/util';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',

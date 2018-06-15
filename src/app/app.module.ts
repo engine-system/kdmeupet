@@ -104,7 +104,7 @@ const firebaseConfig={
     CadastroPet_3Page,
     CadastroPet_4Page,
     CadastroPet_5Page,
-    CabecalhoPage,
+
     HomePage,
     TabsPage,
     PopoverPage,

@@ -7,7 +7,6 @@ import { PetProvider } from '../../providers/pet/pet-provider';
 import { Pet } from '../../model/pet';
 import { CadastroFinalizadoPage } from '../cadastro-finalizado/cadastro-finalizado';
 
-@IonicPage()
 @Component({
   selector: 'page-cadastro-pet-5',
   templateUrl: 'cadastro-pet-5.html',

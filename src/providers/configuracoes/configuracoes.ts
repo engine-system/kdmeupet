@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ConfiguracoesProvider {
 
-  public VERSION_APP:string = '0.3';
+  public VERSION_APP:string = '1.0';
   public APIMAPSKEY:string = 'AIzaSyBEVCs0WBpzWA7Kzl8CnWtLD-pa3dmSkDk';
   public ENDERECO_MAPS = "https://maps.googleapis.com/maps/api/geocode/json"
   

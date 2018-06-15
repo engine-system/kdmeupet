@@ -8,7 +8,6 @@ import { PetProvider } from '../../../providers/pet/pet-provider';
 import { UtilProvider } from '../../../providers/util/util';
 import { PetIndividualPage } from '../../pet-individual/pet-individual';
 
-@IonicPage()
 @Component({
   selector: 'page-lista-encontrados',
   templateUrl: 'lista-encontrados.html',

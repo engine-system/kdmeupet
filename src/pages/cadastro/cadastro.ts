@@ -5,15 +5,6 @@ import { UtilProvider } from '../../providers/util/util';
 import { AuthService } from '../../providers/auth/auth-service';
 import { User } from '../../providers/auth/user';
 import { LoginPage } from '../login/login';
-
-/**
- * Generated class for the CadastroPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-cadastro',
   templateUrl: 'cadastro.html',

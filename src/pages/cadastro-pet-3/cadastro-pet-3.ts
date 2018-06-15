@@ -5,7 +5,6 @@ import { CadastroPet_2Page } from '../cadastro-pet-2/cadastro-pet-2';
 import { Pet } from '../../model/pet';
 import { UtilProvider } from '../../providers/util/util';
 
-@IonicPage()
 @Component({
   selector: 'page-cadastro-pet-3',
   templateUrl: 'cadastro-pet-3.html',

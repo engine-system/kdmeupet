@@ -9,7 +9,6 @@ import { PopoverPage } from '../popover/popover';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-cabecalho',
   templateUrl: 'cabecalho.html',

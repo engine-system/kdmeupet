@@ -5,14 +5,7 @@ import { LoginPage } from '../login/login';
 import { AuthService } from '../../providers/auth/auth-service';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 
-/**
- * Generated class for the PopoverPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
   selector: 'page-popover',
   templateUrl: 'popover.html',

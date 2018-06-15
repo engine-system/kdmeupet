@@ -4,14 +4,7 @@ import { PetProvider } from '../../providers/pet/pet-provider';
 import { CadastroPet_4Page } from '../cadastro-pet-4/cadastro-pet-4';
 import { User } from '../../providers/auth/user';
 
-/**
- * Generated class for the PetIndividualPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
 @Component({
   selector: 'page-pet-individual',
   templateUrl: 'pet-individual.html',
@@ -51,8 +44,11 @@ export class PetIndividualPage {
   }
 
   saveMensagem(){
-    this.petProvider.mensagemPet(this.pet.key,this.mensagem);
-    this.carregaMensagens();
+    if(this.mensagem!=""){
+      this.petProvider.mensagemPet(this.pet.key,this.mensagem);
+      this.carregaMensagens();
+      this.mensagem = "";
+    }
   }
 
 }

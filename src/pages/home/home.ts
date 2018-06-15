@@ -57,14 +57,11 @@ export class HomePage {
   public perdiMeuPet() {
   let pet: Pet = new Pet();
   pet.zerar();
-  if (this.podeCadastrar) {
     this.navCtrl.push(CadastroPetPage, {
       'acao': 'perdido',
       'pet': pet
     })
-  }else{
-    this.util.createMessage("Por favor, cadastre alguns dados no seu perfil");
-  }
+  
 }
   public acheiUmPet() {
   let pet: Pet = new Pet();
