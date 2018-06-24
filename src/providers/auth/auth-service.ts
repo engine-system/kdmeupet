@@ -21,6 +21,9 @@ export class AuthService {
     }
 
     logar(user: User) {
+        user.email = user.email.toLowerCase();
+        user.email = user.email.trim();
+        console.log(user);
         return this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
     }
     public logOut():boolean {

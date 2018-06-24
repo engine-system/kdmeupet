@@ -122,6 +122,7 @@ const firebaseConfig={
     HttpClientModule,
     AdMobFree,
     SocialSharing,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PetProvider,
